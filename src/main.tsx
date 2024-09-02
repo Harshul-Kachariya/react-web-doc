@@ -31,6 +31,7 @@ import RadioButtonDefaultValue from "./components/other/RadioButtonDefaultValue.
 import CheckboxChecked from "./components/other/checkboxchecked.tsx";
 
 import WebWorkerComponent from "./components/other/webworker";
+import WindowWidthComponent from "./components/Hooks/CustomHooks/WindowWidthComponent.tsx";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,14 @@ const router = createBrowserRouter([
         element: (
           // <Suspense fallback={<>Laoding...</>}>
           <CuatomHook />
+          // </Suspense>
+        ),
+      },
+      {
+        path: "/output/customHooks",
+        element: (
+          // <Suspense fallback={<>Laoding...</>}>
+          <WindowWidthComponent />
           // </Suspense>
         ),
       },
