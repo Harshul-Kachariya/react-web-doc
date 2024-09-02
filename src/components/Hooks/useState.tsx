@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CodeSnippets from "../CodeSnippets";
 import { IoIosRefresh } from "react-icons/io";
+import CodeSnippets from "../CodeSnippets";
 
 const UseState = () => {
   const [preview, setPreview] = useState<boolean>(false);

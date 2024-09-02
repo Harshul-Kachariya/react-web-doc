@@ -1,13 +1,13 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const CodeSnippets = ({ codeString }: any) => {
+const CodeSnippets = ({ codeString, showLineNumbers = true }: any) => {
   return (
     <SyntaxHighlighter
       language="jsx"
       style={atomOneDark}
       className="rounded-lg bg-gray-800"
-      showLineNumbers
+      showLineNumbers={showLineNumbers}
     >
       {codeString}
     </SyntaxHighlighter>

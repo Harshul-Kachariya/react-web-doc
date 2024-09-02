@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CodeSnippets from "../../CodeSnippets";
 
-import WindowWidthComponent from "./WindowWidthComponent"; // Import the component that uses the custom hook
+// Import the component that uses the custom hook
 import { useNavigate } from "react-router-dom";
 
 const CuatomHook = () => {

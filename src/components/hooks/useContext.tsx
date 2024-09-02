@@ -1,6 +1,12 @@
+import { useState } from "react";
+import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
 
 const UseContext = () => {
+  const [preview, setPreview] = useState(false);
+
+  const [value, setValue] = useState("Hello from context");
+
   return (
     <div className="flex justify-center items-start">
       <div className="p-8 w-3/4">
@@ -55,6 +61,32 @@ function App() {
 export default App;
 `}
           />
+          <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
+            {!preview ? (
+              <div>
+                <div className="space-x-3 ">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => setPreview(true)}
+                  >
+                    Preview of code
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="relative top-1 min-h-48">
+                <p className="text-xl">Context Value: {value}</p>
+                <div className="absolute top-1 right-2">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => {}}
+                  >
+                    <IoIosRefresh className="text-xl text-white" />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

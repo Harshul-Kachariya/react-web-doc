@@ -1,6 +1,11 @@
+import { useState } from "react";
+import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
 
 const UseReducer = () => {
+  const [preview, setPreview] = useState<boolean>(false);
+  const [count, setCount] = useState<number>(0);
+
   return (
     <div className="flex justify-center items-start">
       <div className="p-8 w-3/4">
@@ -53,6 +58,52 @@ function Counter() {
 export default Counter;
 `}
           />
+          <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
+            {!preview ? (
+              <div>
+                <div className="space-x-3 ">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => setPreview(true)}
+                  >
+                    Preview of code
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="relative top-1 min-h-48">
+                <div className="flex flex-col gap-3">
+                  <div className="mt-4 flex flex-col gap-3">
+                    <span className="text-xl">Count: {count}</span>
+                    <div className="space-x-3">
+                      <button
+                        className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                        onClick={() => setCount(count + 1)}
+                      >
+                        Increment
+                      </button>
+                      <button
+                        className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                        onClick={() => setCount(count - 1)}
+                      >
+                        Decrement
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-1 right-2">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => {
+                      setCount(0);
+                    }}
+                  >
+                    <IoIosRefresh className="text-xl text-white" />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

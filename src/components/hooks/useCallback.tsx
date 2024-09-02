@@ -1,6 +1,20 @@
+import { useState, useCallback } from "react";
 import CodeSnippets from "../CodeSnippets";
+import { IoIosRefresh } from "react-icons/io";
 
 const UseCallback = () => {
+  const [preview, setPreview] = useState(false);
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState<any[]>([]);
+
+  const increment = useCallback(() => {
+    setCount((c) => c + 1);
+  }, []);
+
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, "New Todo"]);
+  }, []);
+
   return (
     <div className="flex justify-center items-start">
       <div className="p-8 w-3/4">
@@ -27,30 +41,90 @@ const UseCallback = () => {
 
 function ParentComponent() {
   const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
 
-  // Memoized callback function
-  const handleClick = useCallback(() => {
-    console.log("Button clicked");
-  }, []); // Empty dependency array means it won't change
+  // Memoized callback functions
+  const increment = useCallback(() => {
+    setCount((c) => c + 1);
+  }, []);
+
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, "New Todo"]);
+  }, []);
 
   return (
     <div>
-      <ChildComponent onClick={handleClick} />
-      <button onClick={() => setCount(count + 1)}>Increment count</button>
-      <p>Count: {count}</p>
+      <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
     </div>
   );
-}
-
-function ChildComponent({ onClick }) {
-  console.log("Child rendered");
-  
-  return <button onClick={onClick}>Click me</button>;
 }
 
 export default ParentComponent;
 `}
           />
+          <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5">
+            {!preview ? (
+              <div>
+                <span className="text-xl">
+                  Enter any number you want to start with
+                </span>
+                <div className="space-x-3 mt-4">
+                  <input
+                    type="tel"
+                    onChange={(e) => setCount(Number(e.target.value))}
+                    className="p-2 rounded-md hover:shadow-md outline-none"
+                  />
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => setPreview(true)}
+                  >
+                    Preview of code
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="relative top-1">
+                <button
+                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                  onClick={increment}
+                >
+                  You pressed me {count} times
+                </button>
+                <button
+                  className="ml-3 bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                  onClick={addTodo}
+                >
+                  Add Todo
+                </button>
+                <div className="mt-4">
+                  {todos.length > 0 && (
+                    <>
+                      <h2 className="text-xl font-bold">Todos:</h2>
+                      {todos.map((todo, index) => (
+                        <p key={index}>{todo}</p>
+                      ))}
+                    </>
+                  )}
+                </div>
+                <div className="absolute top-1 right-2">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => {
+                      setCount(0);
+                      setTodos([]);
+                    }}
+                  >
+                    <IoIosRefresh className="text-xl text-white" />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

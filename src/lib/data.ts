@@ -32,3 +32,14 @@ export const Hooks = [
     slug: "/customHooks",
   },
 ];
+
+export const gettingStarted = [
+  {
+    name: "create-react-app",
+    slug: "/create-react-app",
+  },
+  {
+    name: "create-react-app with vite",
+    slug: "/create-vite-app",
+  },
+];
