@@ -15,6 +15,18 @@ import UseRef from "./components/Hooks/useRef.tsx";
 import UseCallback from "./components/Hooks/useCallback.tsx";
 import UseContext from "./components/Hooks/useContext.tsx";
 import UseReducer from "./components/Hooks/useReducer.tsx";
+import OnBlurEvent from "./components/Events/onBlur.tsx";
+import OnChangeEvent from "./components/Events/onChange.tsx";
+import OnFocusEvent from "./components/Events/onFocus.tsx";
+import RadioButtonEvent from "./components/Events/RadioButtonEvent.tsx";
+import CheckboxEvent from "./components/Events/checkboxevent.tsx";
+import WebWorkerComponent from "./components/other/webworker";
+import InputValue from "./components/other/inputValue.tsx";
+import RadioButtonValue from "./components/other/radiobuttonvalue.tsx";
+import InputDefaultValue from "./components/other/inputDefaultvalue.tsx";
+import CheckboxDefaultChecked from "./components/other/CheckboxDefaultChecked.tsx";
+import RadioButtonDefaultValue from "./components/other/RadioButtonDefaultValue.tsx";
+import CheckboxChecked from "./components/other/Checkboxchecked.tsx";
 
 const router = createBrowserRouter([
   {
@@ -88,6 +100,54 @@ const router = createBrowserRouter([
       {
         path: "/hooks/useReducer",
         element: <UseReducer />,
+      },
+      {
+        path: "/events/onBlur",
+        element: <OnBlurEvent />,
+      },
+      {
+        path: "/events/onChange",
+        element: <OnChangeEvent />,
+      },
+      {
+        path: "/events/onFocus",
+        element: <OnFocusEvent />,
+      },
+      {
+        path: "/events/RadioButtonEvent",
+        element: <RadioButtonEvent />,
+      },
+      {
+        path: "/events/CheckboxEvent",
+        element: <CheckboxEvent />,
+      },
+      {
+        path: "/other/webworker",
+        element: <WebWorkerComponent />,
+      },
+      {
+        path: "/other/inputValue",
+        element: <InputValue />,
+      },
+      {
+        path: "/other/RadioButtonValue",
+        element: <RadioButtonValue />,
+      },
+      {
+        path: "/other/CheckboxDefaultChecked",
+        element: <CheckboxDefaultChecked />,
+      },
+      {
+        path: "/other/inputDefaultvalue",
+        element: <InputDefaultValue />,
+      },
+      {
+        path: "/other/RadioButtonDefaultValue",
+        element: <RadioButtonDefaultValue />,
+      },
+      {
+        path: "/other/Checkboxchecked",
+        element: <CheckboxChecked />,
       },
     ],
   },
