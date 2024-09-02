@@ -14,7 +14,8 @@ const InputDefaultValue = () => {
         </p>
         <p className="text-lg font-bold mb-2">Setting Default Value:</p>
         <CodeSnippets
-          codeString={`const [inputValue, setInputValue] = useState("Default Value");`}
+          codeString={` const [inputValue, setInputValue] = useState("Default Value");`}
+          showLineNumbers={false}
         />
         <PreviewBox>
           <input

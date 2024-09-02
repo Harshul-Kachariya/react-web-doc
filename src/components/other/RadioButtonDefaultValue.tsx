@@ -4,7 +4,7 @@ import PreviewBox from "../PreviewBox";
 
 const RadioButtonDefaultValue = () => {
   const [selectedValue, setSelectedValue] = useState("option1");
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setSelectedValue(event.target.value);
   };
   return (
@@ -21,7 +21,8 @@ const RadioButtonDefaultValue = () => {
         </p>
         <p className="text-lg font-bold mb-2">Setting Default Value:</p>
         <CodeSnippets
-          codeString={`const [selectedValue, setSelectedValue] = useState("option1");`}
+          codeString={` const [selectedValue, setSelectedValue] = useState("option1");`}
+          showLineNumbers={false}
         />
         <PreviewBox>
           <div>

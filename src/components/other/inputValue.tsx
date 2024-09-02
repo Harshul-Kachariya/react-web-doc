@@ -13,7 +13,8 @@ const InputValue = () => {
         </p>
         <p className="text-lg font-bold mb-2">Handling Input Value:</p>
         <CodeSnippets
-          codeString={`const [inputValue, setInputValue] = useState("");`}
+          codeString={` const [inputValue, setInputValue] = useState("");`}
+          showLineNumbers={false}
         />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>

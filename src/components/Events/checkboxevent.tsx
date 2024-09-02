@@ -13,7 +13,8 @@ const CheckboxEvent = () => {
         </p>
         <p className="text-lg font-bold mb-2">Handling Checkbox State:</p>
         <CodeSnippets
-          codeString={`<input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} />`}
+          codeString={` <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} />`}
+          showLineNumbers={false}
         />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>

@@ -21,7 +21,10 @@ const UseRef = () => {
           around that doesn’t trigger a re-render when updated.
         </p>
         <p className="text-lg font-bold mb-2">Import useRef:</p>
-        <CodeSnippets codeString={`import { useRef } from "react"`} />
+        <CodeSnippets
+          codeString={` import { useRef } from "react"`}
+          showLineNumbers={false}
+        />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>
           <p className="mb-2 text-lg">

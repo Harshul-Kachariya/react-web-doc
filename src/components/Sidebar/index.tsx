@@ -6,9 +6,10 @@ const Sidebar = () => {
     <div className="sidebar space-y-4">
       <div>
         <Link to="/gettingSarted" className="text-xl font-bold mb-4">
-          Gettin Statrted
+          Getting Started
         </Link>
-        <nav className="ml-10">
+        <nav className="ml-8  ">
+          <br />
           <ul className="text-lg flex justify-center items-start flex-col gap-2">
             {gettingStarted &&
               gettingStarted.map((item, i) => (
@@ -22,8 +23,11 @@ const Sidebar = () => {
         </nav>
       </div>
       <div>
-        <div className="text-xl font-bold mb-4">Hooks</div>
-        <nav className="ml-10">
+        <Link to="/gettingSarted" className="text-xl font-bold mb-4">
+          Hooks
+        </Link>
+        <nav className="ml-8  ">
+          <br />
           <ul className="text-lg flex justify-center items-start flex-col gap-2">
             {Hooks &&
               Hooks.map((item) => (
@@ -37,8 +41,14 @@ const Sidebar = () => {
                 </li>
               ))}
           </ul>
+        </nav>
+      </div>
+      <div>
+        <Link to="/gettingSarted" className="text-xl font-bold mb-4">
+          Events
+        </Link>
+        <nav className="ml-8  ">
           <br />
-          <div className="text-2xl font-bold mb-4">Events</div>
           <ul className="text-lg flex justify-center items-start flex-col gap-2">
             {Events &&
               Events.map((item) => (
@@ -52,8 +62,14 @@ const Sidebar = () => {
                 </li>
               ))}
           </ul>
+        </nav>
+      </div>
+      <div>
+        <Link to="/gettingSarted" className="text-xl font-bold mb-4">
+          Other
+        </Link>
+        <nav className="ml-8  ">
           <br />
-          <div className="text-2xl font-bold mb-4">Other</div>
           <ul className="text-lg flex justify-center items-start flex-col gap-2">
             {other &&
               other.map((item) => (

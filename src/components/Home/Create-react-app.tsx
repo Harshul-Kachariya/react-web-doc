@@ -10,17 +10,21 @@ const CreateReactApp = () => {
           <p className="text-gray-700 mb-4 text-xl">
             To create a new React project, run the following command:
           </p>
-          <CodeSnippets codeString={`npx create-react-app my-react-app`} />
+          <CodeSnippets
+            codeString={` npx create-react-app my-react-app`}
+            showLineNumbers={false}
+          />
         </section>
 
         <section id="setup" className="mb-10 text-xl ">
-          <h2 className="text-3xl font-bold mb-4 text-slate-800">Setup :</h2>
+          <h2 className="text-2xl font-bold mb-4 text-slate-800">Setup :</h2>
           <p className="text-gray-700 mb-4">
             Navigate to your project directory and start the development server:
           </p>
           <CodeSnippets
             codeString={` cd my-react-app
  npm start`}
+            showLineNumbers={false}
           />
           <div className="my-5">
             <h2 className="text-3xl font-bold mb-4 text-slate-800">

@@ -13,7 +13,8 @@ const OnChangeEvent = () => {
         </p>
         <p className="text-lg font-bold mb-2">Using onChange:</p>
         <CodeSnippets
-          codeString={`<input type="text" onChange={handleChange} />`}
+          codeString={` <input type="text" onChange={handleChange} />`}
+          showLineNumbers={false}
         />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>
