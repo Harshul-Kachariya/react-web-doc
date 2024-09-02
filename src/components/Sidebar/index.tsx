@@ -17,6 +17,11 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/hooks/useMemo" className="hover:text-gray-300">
+              useMemo
+            </Link>
+          </li>
+          <li>
             <Link to="/hooks/useRef" className="hover:text-gray-300">
               useRef
             </Link>
@@ -34,16 +39,6 @@ const Sidebar = () => {
           <li>
             <Link to="/hooks/useCallback" className="hover:text-gray-300">
               useCallback
-            </Link>
-          </li>
-          <li>
-            <Link to="/hooks/useMemo" className="hover:text-gray-300">
-              useMemo
-            </Link>
-          </li>
-          <li>
-            <Link to="/hooks/custom" className="hover:text-gray-300">
-              Custom Hooks
             </Link>
           </li>
         </ul>

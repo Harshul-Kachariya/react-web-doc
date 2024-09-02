@@ -1,7 +1,6 @@
-import CodeSnippets from "./CodeSnippets";
+import CodeSnippets from "../CodeSnippets";
 
 const UseState = () => {
-  const codeString = "(num) => num + 1";
   return (
     <div className="flex justify-center items-start ">
       <div className=" p-8 w-3/4">
@@ -12,7 +11,7 @@ const UseState = () => {
           data or properties that need to be tracking in an application.
         </p>
         <p className="text-lg font-bold mb-2">Import useState :</p>
-        <CodeSnippets codeString={`import {useState} from "react`} />
+        <CodeSnippets codeString={`import {useState} from "react"`} />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>
           <p className="mb-2 text-lg">
