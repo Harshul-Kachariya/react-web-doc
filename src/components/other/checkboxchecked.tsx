@@ -16,7 +16,8 @@ const CheckboxChecked = () => {
           Handling Checkbox Checked State:
         </p>
         <CodeSnippets
-          codeString={`const [isChecked, setIsChecked] = useState(false);`}
+          codeString={` const [isChecked, setIsChecked] = useState(false);`}
+          showLineNumbers={false}
         />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>

@@ -28,7 +28,8 @@ const OnBlurEvent = () => {
         </p>
         <p className="text-lg font-bold mb-2">Using onBlur:</p>
         <CodeSnippets
-          codeString={`<input type="text" onBlur={handleBlur} />`}
+          codeString={` <input type="text" onBlur={handleBlur} />`}
+          showLineNumbers={false}
         />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>

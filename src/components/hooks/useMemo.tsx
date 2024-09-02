@@ -29,7 +29,10 @@ const UseMemo = () => {
           expensive calculations on every render.
         </p>
         <p className="text-lg font-bold mb-2">Import useMemo:</p>
-        <CodeSnippets codeString={`import { useMemo } from "react"`} />
+        <CodeSnippets
+          codeString={` import { useMemo } from "react"`}
+          showLineNumbers={false}
+        />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>
           <p className="mb-2 text-lg">
