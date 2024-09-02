@@ -22,7 +22,10 @@ const UseState = () => {
           data or properties that need to be tracking in an application.
         </p>
         <p className="text-xl mb-2 text-[#282c34]">Import useState :</p>
-        <CodeSnippets codeString={`import {useState} from "react`} />
+        <CodeSnippets
+          codeString={` import {useState} from "react`}
+          showLineNumbers={false}
+        />
         <div className="mt-5">
           <p className="text-xl mb-2 ">
             The <span className="text-red-500">set</span> function returned by{" "}
