@@ -4,8 +4,17 @@ const App = lazy(() => import("./App.tsx"));
 import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import UseState from "./components/useState.tsx";
+import Homepage from "./components/Home/index.tsx";
+import GetStarted from "./components/Home/GetStarted.tsx";
+import UseState from "./components/Hooks/useState.tsx";
+import CuatomHook from "./components/Hooks/CustomHooks/CustomHook.tsx";
+import WindowWidthComponent from "./components/Hooks/CustomHooks/WindowWidthComponent.tsx";
+import UseEffect from "./components/Hooks/useEffect.tsx";
+import UseMemo from "./components/Hooks/useMemo.tsx";
+import UseRef from "./components/Hooks/useRef.tsx";
+import UseCallback from "./components/Hooks/useCallback.tsx";
+import UseContext from "./components/Hooks/useContext.tsx";
+import UseReducer from "./components/Hooks/useReducer.tsx";
 
 const router = createBrowserRouter([
   {
