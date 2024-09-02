@@ -43,3 +43,56 @@ export const gettingStarted = [
     slug: "/create-vite-app",
   },
 ];
+export const Events = [
+  {
+    name: "onBlur",
+    slug: "/onBlur",
+  },
+  {
+    name: "onFocus",
+    slug: "/onFocus",
+  },
+  {
+    name: "onChange",
+    slug: "/onChange",
+  },
+  {
+    name: "radioEvent",
+    slug: "/RadioButtonEvent",
+  },
+  {
+    name: "CheckboxEvent",
+    slug: "/CheckboxEvent",
+  },
+];
+
+export const other = [
+  {
+    name: "inputValue",
+    slug: "/inputValue",
+  },
+  {
+    name: "inputDefaultvalue",
+    slug: "/inputDefaultvalue",
+  },
+  {
+    name: "Checkboxchecked",
+    slug: "/Checkboxchecked",
+  },
+  {
+    name: "CheckboxDefaultChecked",
+    slug: "/CheckboxDefaultChecked",
+  },
+  {
+    name: "RadioButtonValue",
+    slug: "/RadioButtonValue",
+  },
+  {
+    name: "RadioButtonDefaultValue",
+    slug: "/RadioButtonDefaultValue",
+  },
+  {
+    name: "webWorker",
+    slug: "/webWorker",
+  },
+];

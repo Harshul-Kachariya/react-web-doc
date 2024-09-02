@@ -8,7 +8,7 @@ import Homepage from "./components/Home/index.tsx";
 import GetStarted from "./components/Home/GetStarted.tsx";
 
 import CuatomHook from "./components/Hooks/CustomHooks/CustomHook.tsx";
-import WindowWidthComponent from "./components/Hooks/CustomHooks/WindowWidthComponent.tsx";
+
 import UseEffect from "./components/Hooks/useEffect.tsx";
 import UseMemo from "./components/Hooks/useMemo.tsx";
 import UseRef from "./components/Hooks/useRef.tsx";
@@ -18,6 +18,19 @@ import UseReducer from "./components/Hooks/useReducer.tsx";
 import UseState from "./components/Hooks/useState.tsx";
 import CreateReactApp from "./components/Home/Create-react-app.tsx";
 import CreateViteApp from "./components/Home/Create-vite-app.tsx";
+import OnBlurEvent from "./components/Events/onBlur.tsx";
+import OnChangeEvent from "./components/Events/onChange.tsx";
+import OnFocusEvent from "./components/Events/onFocus.tsx";
+import RadioButtonEvent from "./components/Events/radiobuttonevent.tsx";
+import CheckboxEvent from "./components/Events/checkboxevent.tsx";
+import InputValue from "./components/other/inputValue.tsx";
+import RadioButtonValue from "./components/other/radiobuttonvalue.tsx";
+import CheckboxDefaultChecked from "./components/other/CheckboxDefaultChecked.tsx";
+import InputDefaultValue from "./components/other/inputDefaultvalue.tsx";
+import RadioButtonDefaultValue from "./components/other/RadioButtonDefaultValue.tsx";
+import CheckboxChecked from "./components/other/checkboxchecked.tsx";
+
+import WebWorkerComponent from "./components/other/webworker";
 
 const router = createBrowserRouter([
   {
@@ -101,8 +114,52 @@ const router = createBrowserRouter([
         element: <UseReducer />,
       },
       {
-        path: "/output/customHooks",
-        element: <WindowWidthComponent />,
+        path: "/events/onBlur",
+        element: <OnBlurEvent />,
+      },
+      {
+        path: "/events/onChange",
+        element: <OnChangeEvent />,
+      },
+      {
+        path: "/events/onFocus",
+        element: <OnFocusEvent />,
+      },
+      {
+        path: "/events/RadioButtonEvent",
+        element: <RadioButtonEvent />,
+      },
+      {
+        path: "/events/CheckboxEvent",
+        element: <CheckboxEvent />,
+      },
+      {
+        path: "/other/webworker",
+        element: <WebWorkerComponent />,
+      },
+      {
+        path: "/other/inputValue",
+        element: <InputValue />,
+      },
+      {
+        path: "/other/RadioButtonValue",
+        element: <RadioButtonValue />,
+      },
+      {
+        path: "/other/CheckboxDefaultChecked",
+        element: <CheckboxDefaultChecked />,
+      },
+      {
+        path: "/other/inputDefaultvalue",
+        element: <InputDefaultValue />,
+      },
+      {
+        path: "/other/RadioButtonDefaultValue",
+        element: <RadioButtonDefaultValue />,
+      },
+      {
+        path: "/other/Checkboxchecked",
+        element: <CheckboxChecked />,
       },
     ],
   },
