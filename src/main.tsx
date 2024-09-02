@@ -4,14 +4,8 @@ const App = lazy(() => import("./App.tsx"));
 import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import UseState from "./components/Hooks/useState.tsx";
-import CuatomHook from "./components/Hooks/CustomHooks/CustomHook.tsx";
-import WindowWidthComponent from "./components/Hooks/CustomHooks/WindowWidthComponent.tsx";
-const GetStarted = lazy(() => import("./components/Home/GetStarted.tsx"));
 
-// const UseState = lazy(() => import("./components/useState.tsx"));
-
-const Homepage = lazy(() => import("./components/Home/index.tsx"));
+import UseState from "./components/useState.tsx";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +55,30 @@ const router = createBrowserRouter([
           <WindowWidthComponent />
           // </Suspense>
         ),
+      },
+      {
+        path: "/hooks/useEffect",
+        element: <UseEffect />,
+      },
+      {
+        path: "/hooks/useMemo",
+        element: <UseMemo />,
+      },
+      {
+        path: "/hooks/useRef",
+        element: <UseRef />,
+      },
+      {
+        path: "/hooks/useCallback",
+        element: <UseCallback />,
+      },
+      {
+        path: "/hooks/useContext",
+        element: <UseContext />,
+      },
+      {
+        path: "/hooks/useReducer",
+        element: <UseReducer />,
       },
     ],
   },
