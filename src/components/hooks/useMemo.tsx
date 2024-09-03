@@ -14,7 +14,6 @@ const UseMemo = () => {
   );
 
   function ExpensiveCalculation(num: number) {
-    console.log("Calculating...");
     return num * 2;
   }
 
@@ -89,7 +88,8 @@ export default ExampleComponent;
             <div className="relative top-1">
               <div className="flex flex-col gap-3">
                 <input
-                  type="tel"
+                  type="number"
+                  value={inputValue}
                   onChange={(e) => setInputValue(Number(e.target.value))}
                   className="p-2 rounded-md hover:shadow-md outline-none w-36"
                 />
