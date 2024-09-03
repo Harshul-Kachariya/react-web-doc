@@ -23,8 +23,7 @@ const webWorker = () => {
             application to perform a computation in the background.
           </p>
           <CodeSnippets
-            codeString={`// worker.js
-self.onmessage = function (e) {
+            codeString={`self.onmessage = function (e) {
   const result = e.data * 2; // Example computation
   self.postMessage(result);
 };

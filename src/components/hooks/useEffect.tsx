@@ -100,7 +100,7 @@ function ExampleComponent() {
                       className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                       onClick={() => setCount(0)}
                     >
-                      <IoIosRefresh className="text-xl text-white " />
+                      <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                     </button>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ function ExampleComponent() {
                       className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                       onClick={() => setCount2(0)}
                     >
-                      <IoIosRefresh className="text-xl text-white " />
+                      <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                     </button>
                   </div>
                 </div>
