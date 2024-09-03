@@ -69,8 +69,9 @@ export default InputValueComponent;
               <div className="flex flex-col gap-2">
                 <input
                   type="text"
+                  value={value}
                   onChange={(e) => setValue(e.target.value)}
-                  className="p-2 rounded-md hover:shadow-md  w-36 "
+                  className="p-2 rounded-md hover:shadow-md outline-none w-36 "
                 />
                 <p className="text-xl">Current Value: {value}</p>
               </div>

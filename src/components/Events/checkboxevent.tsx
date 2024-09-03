@@ -71,7 +71,6 @@ export default CheckboxComponent;
               <label className="flex gap-3">
                 <input
                   type="radio"
-                  value="option1"
                   checked={isChecked}
                   onChange={(e) => setIsChecked(e.target.checked)}
                 />
@@ -83,7 +82,7 @@ export default CheckboxComponent;
               <div className="absolute top-1 right-2">
                 <button
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => {}}
+                  onClick={() => setIsChecked(false)}
                 >
                   <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                 </button>

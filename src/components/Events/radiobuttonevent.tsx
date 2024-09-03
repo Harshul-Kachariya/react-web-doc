@@ -107,7 +107,7 @@ export default RadioButtonComponent;
               <div className="absolute top-1 right-2">
                 <button
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => {}}
+                  onClick={() => setSelectedOption("")}
                 >
                   <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                 </button>

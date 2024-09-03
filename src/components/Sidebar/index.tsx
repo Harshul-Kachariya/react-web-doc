@@ -9,6 +9,7 @@ import {
   styleSheets,
   Apis,
   StateManagement,
+  reactTypes,
 } from "../../lib/data";
 
 const Sidebar = ({ setIsOpen }: any) => {
@@ -55,6 +56,35 @@ const Sidebar = ({ setIsOpen }: any) => {
           <ul className="text-lg flex justify-center items-start flex-col gap-2">
             {styleSheets &&
               styleSheets.map((item, i) => (
+                <li key={i}>
+                  <NavLink
+                    to={`${item.slug}`}
+                    className={({ isActive }) =>
+                      !isActive
+                        ? "  hover:text-gray-300 transition-all"
+                        : " text-[#C66CAC] "
+                    }
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </NavLink>
+                </li>
+              ))}
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <NavLink
+          to=""
+          className="text-xl font-bold my-4"
+          onClick={() => setIsOpen(false)}
+        >
+          React
+        </NavLink>
+        <nav className="ml-8   py-2">
+          <ul className="text-lg flex justify-center items-start flex-col gap-2">
+            {reactTypes &&
+              reactTypes.map((item, i) => (
                 <li key={i}>
                   <NavLink
                     to={`${item.slug}`}

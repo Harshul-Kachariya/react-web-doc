@@ -71,6 +71,7 @@ export default CheckboxCheckedComponent;
                 <input
                   type="checkbox"
                   id="check"
+                  checked={value}
                   onChange={(e) => setValue(e.target.checked)}
                   className="p-2 rounded-md hover:shadow-md"
                 />

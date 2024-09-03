@@ -36,6 +36,8 @@ import Tailwind from "./components/Styles/Tailwind.tsx";
 import MemoComponent from "./components/Hooks/memo.tsx";
 import LazyComponent from "./components/APIs/Lazy/Lazy.tsx";
 import ReduxToolKit from "./components/StateManagement/ReduxToolKit.tsx";
+import Components from "./components/React/Components.tsx";
+import Props from "./components/React/Props.tsx";
 
 const router = createBrowserRouter([
   {
@@ -185,6 +187,14 @@ const router = createBrowserRouter([
       {
         path: "/state-management/reduxTookit",
         element: <ReduxToolKit />,
+      },
+      {
+        path: "/react/components",
+        element: <Components />,
+      },
+      {
+        path: "/react/props",
+        element: <Props />,
       },
     ],
   },
