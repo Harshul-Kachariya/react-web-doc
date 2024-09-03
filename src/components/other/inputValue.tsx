@@ -1,6 +1,11 @@
+import { useState } from "react";
 import CodeSnippets from "../CodeSnippets";
+import { IoIosRefresh } from "react-icons/io";
 
 const InputValue = () => {
+  const [preview, setPreview] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
+
   return (
     <div className="flex justify-center items-start">
       <div className="p-8 w-3/4">
@@ -13,7 +18,8 @@ const InputValue = () => {
         </p>
         <p className="text-lg font-bold mb-2">Handling Input Value:</p>
         <CodeSnippets
-          codeString={`const [inputValue, setInputValue] = useState("");`}
+          codeString={` const [inputValue, setInputValue] = useState("");`}
+          showLineNumbers={false}
         />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>
@@ -47,6 +53,39 @@ function InputValueComponent() {
 export default InputValueComponent;
 `}
           />
+          <div className="col-span-1 p-2 bg-gray-400 rounded-lg mt-5">
+            {!preview ? (
+              <div>
+                <div className="space-x-3 mt-4">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => setPreview(true)}
+                  >
+                    Preview of code
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="relative top-1">
+                <div className="flex flex-col gap-2">
+                  <input
+                    type="text"
+                    onChange={(e) => setValue(e.target.value)}
+                    className="p-2 rounded-md hover:shadow-md  w-36 "
+                  />
+                  <p className="text-xl">Current Value: {value}</p>
+                </div>
+                <div className="absolute top-1 right-2   ">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => setValue("")}
+                  >
+                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

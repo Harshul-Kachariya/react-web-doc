@@ -42,7 +42,7 @@ const UseState = () => {
             <span className="text-red-500">import</span> the
             <span className="text-red-500"> useState</span> Hook.
           </p>
-          <div className="grid grid-cols-2 h-full">
+          <div className="grid grid-cols-1 gap-5 lg:gap-0 lg:grid-cols-2 h-full">
             <div className={`col-span-1 w-full`}>
               <CodeSnippets
                 codeString={`import { useState } from 'react';
@@ -71,7 +71,7 @@ export default function Counter() {
                   </span>
                   <div className="space-x-3 mt-4">
                     <input
-                      type="tel"
+                      type="number"
                       onChange={(e) => setCount(Number(e.target.value))}
                       className="p-2 rounded-md hover:shadow-md outline-none"
                     />

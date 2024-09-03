@@ -4,7 +4,11 @@ import { IoCheckmarkDone } from "react-icons/io5";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const CodeSnippets = ({ codeString, showLineNumbers = true }: any) => {
+const CodeSnippets = ({
+  codeString,
+  showLineNumbers = true,
+  className,
+}: any) => {
   const [copied, setCopied] = useState(false);
   const copyCodeToClipboard = useCallback(() => {
     window.navigator.clipboard.writeText(codeString).then(
@@ -28,7 +32,7 @@ const CodeSnippets = ({ codeString, showLineNumbers = true }: any) => {
       <SyntaxHighlighter
         language="jsx"
         style={atomOneDark}
-        className="rounded-lg bg-gray-800"
+        className={`rounded-lg bg-gray-800 ${className}`}
         showLineNumbers={showLineNumbers}
       >
         {codeString}

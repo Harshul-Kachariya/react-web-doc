@@ -31,7 +31,10 @@ const UseEffect = () => {
         <p className="text-3xl text-[#282c34] font-bold mb-2">
           Import useEffect :
         </p>
-        <CodeSnippets codeString={`import { useEffect } from "react"`} />
+        <CodeSnippets
+          codeString={` import { useEffect } from "react"`}
+          showLineNumbers={false}
+        />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-3xl text-[#282c34] font-bold mb-2">Example:</h2>
           <p className="mb-2 text-xl text-gray-600">
@@ -97,7 +100,7 @@ function ExampleComponent() {
                       className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                       onClick={() => setCount(0)}
                     >
-                      <IoIosRefresh className="text-xl text-white " />
+                      <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                     </button>
                   </div>
                 </div>
@@ -160,7 +163,7 @@ function ExampleComponent() {
                       className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                       onClick={() => setCount2(0)}
                     >
-                      <IoIosRefresh className="text-xl text-white " />
+                      <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                     </button>
                   </div>
                 </div>

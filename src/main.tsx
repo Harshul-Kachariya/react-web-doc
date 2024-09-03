@@ -32,6 +32,9 @@ import CheckboxChecked from "./components/other/checkboxchecked.tsx";
 
 import WebWorkerComponent from "./components/other/webworker";
 import WindowWidthComponent from "./components/Hooks/CustomHooks/WindowWidthComponent.tsx";
+import Tailwind from "./components/Styles/Tailwind.tsx";
+import MemoComponent from "./components/Hooks/memo.tsx";
+import LazyComponent from "./components/APIs/Lazy/Lazy.tsx";
 
 const router = createBrowserRouter([
   {
@@ -123,6 +126,14 @@ const router = createBrowserRouter([
         element: <UseReducer />,
       },
       {
+        path: "/apis/lazy",
+        element: <LazyComponent />,
+      },
+      {
+        path: "/apis/memo",
+        element: <MemoComponent />,
+      },
+      {
         path: "/events/onBlur",
         element: <OnBlurEvent />,
       },
@@ -169,6 +180,10 @@ const router = createBrowserRouter([
       {
         path: "/other/Checkboxchecked",
         element: <CheckboxChecked />,
+      },
+      {
+        path: "/style/tailwindcss",
+        element: <Tailwind />,
       },
     ],
   },

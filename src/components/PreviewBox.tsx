@@ -1,4 +1,3 @@
-// PreviewBox.js
 const PreviewBox = ({ children }: any) => {
   return (
     <div className="border rounded-lg p-4 mt-4 bg-gray-600 shadow-lg">

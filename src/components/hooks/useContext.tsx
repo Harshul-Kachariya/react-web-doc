@@ -18,7 +18,10 @@ const UseContext = () => {
           Consumer component.
         </p>
         <p className="text-lg font-bold mb-2">Import useContext:</p>
-        <CodeSnippets codeString={`import { useContext } from "react"`} />
+        <CodeSnippets
+          codeString={` import { useContext } from "react"`}
+          showLineNumbers={false}
+        />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>
           <p className="mb-2 text-lg">

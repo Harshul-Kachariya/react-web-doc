@@ -96,3 +96,20 @@ export const other = [
     slug: "/webWorker",
   },
 ];
+
+export const styleSheets = [
+  {
+    name: "Style with Tailwindcss",
+    slug: "/style/tailwindcss",
+  },
+];
+export const Apis = [
+  {
+    name: "lazy",
+    slug: "/apis/lazy",
+  },
+  {
+    name: "memo",
+    slug: "/apis/memo",
+  },
+];

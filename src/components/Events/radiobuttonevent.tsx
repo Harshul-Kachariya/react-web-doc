@@ -20,7 +20,8 @@ const RadioButtonEvent = () => {
           Handling Radio Button Selection:
         </p>
         <CodeSnippets
-          codeString={`<input type="radio" value="option1" onChange={handleChange} /> Option 1`}
+          codeString={` <input type="radio" value="option1" onChange={handleChange} /> Option 1`}
+          showLineNumbers={false}
         />
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
           <h2 className="text-lg font-bold mb-2">Example:</h2>
