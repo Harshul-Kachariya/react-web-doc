@@ -113,3 +113,9 @@ export const Apis = [
     slug: "/apis/memo",
   },
 ];
+export const StateManagement = [
+  {
+    name: "Redux Toolkit / React Redux",
+    slug: "/state-management/reduxTookit",
+  },
+];
