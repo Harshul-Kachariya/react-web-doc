@@ -84,7 +84,7 @@ export default RadioButtonValueComponent;
                 </div>
               </div>
             ) : (
-              <div className="relative top-1">
+              <div className="relative top-1 min-h-20">
                 <div className="flex gap-2 ">
                   <label>
                     <input

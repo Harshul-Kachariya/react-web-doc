@@ -91,6 +91,7 @@ export default ExampleComponent;
                 <div className="flex flex-col gap-3">
                   <input
                     type="tel"
+                    value={memoizedValue}
                     onChange={(e) => setInputValue(Number(e.target.value))}
                     className="p-2 rounded-md hover:shadow-md outline-none w-36"
                   />

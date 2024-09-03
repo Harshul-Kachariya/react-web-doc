@@ -70,10 +70,13 @@ export default InputValueComponent;
                 <div className="flex flex-col gap-2">
                   <input
                     type="text"
+                    value={value}
                     onChange={(e) => setValue(e.target.value)}
-                    className="p-2 rounded-md hover:shadow-md  w-36 "
+                    className="p-2 rounded-md hover:shadow-md  w-36 outline-none"
                   />
-                  <p className="text-xl">Current Value: {value}</p>
+                  <p className="text-xl">
+                    Current Value: <strong>{value}</strong>
+                  </p>
                 </div>
                 <div className="absolute top-1 right-2   ">
                   <button

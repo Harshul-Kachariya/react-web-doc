@@ -70,6 +70,7 @@ export default InputUpdateComponent;
               <div className="relative top-1 min-h-48">
                 <input
                   type="text"
+                  value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Enter text"
                   className={`p-2 rounded-md hover:shadow-md outline-none  w-64 `}
@@ -80,9 +81,9 @@ export default InputUpdateComponent;
                 <div className="absolute top-1 right-2">
                   <button
                     className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                    onClick={() => {}}
+                    onClick={() => setInputValue("")}
                   >
-                    <IoIosRefresh className="text-xl text-white" />
+                    <IoIosRefresh className="text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                   </button>
                 </div>
               </div>
