@@ -16,7 +16,7 @@ const CreateReactApp = () => {
           />
         </section>
 
-        <section id="setup" className="mb-10 text-xl ">
+        <section id="setup" className="mb-10  ">
           <h2 className="text-2xl font-bold mb-4 text-slate-800">Setup :</h2>
           <p className="text-gray-700 mb-4">
             Navigate to your project directory and start the development server:
@@ -32,26 +32,26 @@ const CreateReactApp = () => {
             </h2>
             <CodeSnippets
               codeString={` my-app
- ├── README.md
- ├── node_modules
- ├── package.json
- ├── .gitignore
- ├── public
- │   ├── favicon.ico
- │   ├── index.html
- │   ├── logo192.png
- │   ├── logo512.png
- │   ├── manifest.json
- │   └── robots.txt
- └── src
- ├── App.css
-     ├── App.js
-     ├── App.test.js
-     ├── index.css
-     ├── index.js
-     ├── logo.svg
-     ├── serviceWorker.js
-     └── setupTests.js`}
+  ├── README.md
+  ├── node_modules
+  ├── package.json
+  ├── .gitignore
+  ├── public
+  │   ├── favicon.ico
+  │   ├── index.html
+  │   ├── logo192.png
+  │   ├── logo512.png
+  │   ├── manifest.json
+  │   └── robots.txt
+  └── src
+  ├── App.css
+      ├── App.js
+      ├── App.test.js
+      ├── index.css
+      ├── index.js
+      ├── logo.svg
+      ├── serviceWorker.js
+      └── setupTests.js`}
               showLineNumbers={false}
             />
           </div>

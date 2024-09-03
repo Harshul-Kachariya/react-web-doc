@@ -92,7 +92,7 @@ function ExampleComponent() {
                   rounded-md hover:shadow-md text-white"
                       onClick={() => setStop(!stop)}
                     >
-                      {!stop ? "Stop" : "resume"}
+                      {!stop ? "Stop" : "Start"}
                     </button>
                   </div>
                   <div className="absolute top-1 right-2   ">

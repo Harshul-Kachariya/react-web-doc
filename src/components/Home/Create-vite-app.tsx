@@ -31,7 +31,7 @@ const CreateViteApp = () => {
               Folder Structure of first react-app :
             </h2>
             <CodeSnippets
-              codeString={` my-app
+              codeString={`   my-app
      ├── README.md
      ├── node_modules
      ├── package.json

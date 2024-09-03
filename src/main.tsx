@@ -21,14 +21,14 @@ import CreateViteApp from "./components/Home/Create-vite-app.tsx";
 import OnBlurEvent from "./components/Events/onBlur.tsx";
 import OnChangeEvent from "./components/Events/onChange.tsx";
 import OnFocusEvent from "./components/Events/onFocus.tsx";
-import RadioButtonEvent from "./components/Events/radiobuttonevent.tsx";
-import CheckboxEvent from "./components/Events/checkboxevent.tsx";
+import RadioButtonEvent from "./components/Events/RadioButtonEvent.tsx";
+import CheckboxEvent from "./components/Events/CheckboxEvent.tsx";
 import InputValue from "./components/other/inputValue.tsx";
-import RadioButtonValue from "./components/other/radiobuttonvalue.tsx";
+import RadioButtonValue from "./components/other/RadioButtonValue.tsx";
 import CheckboxDefaultChecked from "./components/other/CheckboxDefaultChecked.tsx";
 import InputDefaultValue from "./components/other/inputDefaultvalue.tsx";
 import RadioButtonDefaultValue from "./components/other/RadioButtonDefaultValue.tsx";
-import CheckboxChecked from "./components/other/checkboxchecked.tsx";
+import CheckboxChecked from "./components/other/Checkboxchecked.tsx";
 
 import WebWorkerComponent from "./components/other/webworker";
 

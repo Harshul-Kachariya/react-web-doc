@@ -45,7 +45,7 @@ const useWindowWidth = () => {
           </p>
         </div>
         <div className="bg-gray-200 rounded-lg py-4 mb-4">
-          <h2 className="text-xl font-bold mb-2 text-[#282c34]">
+          <h2 className="text-xl font-bold mb-2 text-black">
             Using the Custom Hook:
           </h2>
           <p className="mb-2 text-lg">
