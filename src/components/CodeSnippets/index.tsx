@@ -8,8 +8,10 @@ const CodeSnippets = ({
   codeString,
   showLineNumbers = true,
   className,
+  language = "jsx",
 }: any) => {
   const [copied, setCopied] = useState(false);
+
   const copyCodeToClipboard = useCallback(() => {
     window.navigator.clipboard.writeText(codeString).then(
       () => {
@@ -30,7 +32,7 @@ const CodeSnippets = ({
   return (
     <div className="relative">
       <SyntaxHighlighter
-        language="jsx"
+        language={language}
         style={atomOneDark}
         className={`rounded-lg bg-gray-800 ${className}`}
         showLineNumbers={showLineNumbers}
@@ -39,14 +41,10 @@ const CodeSnippets = ({
       </SyntaxHighlighter>
       <div className="absolute top-1 right-2">
         <button
-          className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+          className=" p-2 rounded-md hover:shadow-md text-xl text-white/30 hover:text-white hover:transition-all hover:duration-300"
           onClick={copyCodeToClipboard}
         >
-          {copied ? (
-            <IoCheckmarkDone className="text-xl text-white" />
-          ) : (
-            <IoIosCopy className="text-xl bg-black text-white" />
-          )}
+          {copied ? <IoCheckmarkDone /> : <IoIosCopy />}
         </button>
       </div>
     </div>

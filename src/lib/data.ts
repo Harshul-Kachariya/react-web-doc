@@ -113,3 +113,19 @@ export const Apis = [
     slug: "/apis/memo",
   },
 ];
+export const StateManagement = [
+  {
+    name: "Redux Toolkit / React Redux",
+    slug: "/state-management/reduxTookit",
+  },
+];
+export const reactTypes = [
+  {
+    name: "Components",
+    slug: "/react/components",
+  },
+  {
+    name: "Props",
+    slug: "/react/props",
+  },
+];

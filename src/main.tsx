@@ -35,24 +35,23 @@ import WindowWidthComponent from "./components/Hooks/CustomHooks/WindowWidthComp
 import Tailwind from "./components/Styles/Tailwind.tsx";
 import MemoComponent from "./components/Hooks/memo.tsx";
 import LazyComponent from "./components/APIs/Lazy/Lazy.tsx";
+import ReduxToolKit from "./components/StateManagement/ReduxToolKit.tsx";
+import Components from "./components/React/Components.tsx";
+import Props from "./components/React/Props.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Suspense fallback={<>Laoding...</>}>
-        <App />
-      </Suspense>
-    ),
+    element: <App />,
     children: [
-      {
-        path: "/",
-        element: (
-          <Suspense fallback={<>Laoding...</>}>
-            <Homepage />
-          </Suspense>
-        ),
-      },
+      // {
+      //   path: "/",
+      //   element: (
+      //     <Suspense fallback={<>Laoding...</>}>
+      //       <Homepage />
+      //     </Suspense>
+      //   ),
+      // },
       {
         path: "/create-react-app",
         element: (
@@ -184,6 +183,18 @@ const router = createBrowserRouter([
       {
         path: "/style/tailwindcss",
         element: <Tailwind />,
+      },
+      {
+        path: "/state-management/reduxTookit",
+        element: <ReduxToolKit />,
+      },
+      {
+        path: "/react/components",
+        element: <Components />,
+      },
+      {
+        path: "/react/props",
+        element: <Props />,
       },
     ],
   },
