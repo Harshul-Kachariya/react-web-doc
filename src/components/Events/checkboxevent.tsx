@@ -5,7 +5,6 @@ import { IoIosRefresh } from "react-icons/io";
 const CheckboxEvent = () => {
   const [preview, setPreview] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
-  const [value, setValue] = useState<boolean>(false);
 
   return (
     <div>
@@ -70,8 +69,7 @@ export default CheckboxComponent;
             <div className="relative top-1 min-h-48">
               <label className="flex gap-3 ">
                 <input
-                  type="checkbox"
-                  value="option1"
+                  type="radio"
                   checked={isChecked}
                   onChange={(e) => setIsChecked(e.target.checked)}
                 />

@@ -119,3 +119,13 @@ export const StateManagement = [
     slug: "/state-management/reduxTookit",
   },
 ];
+export const reactTypes = [
+  {
+    name: "Components",
+    slug: "/react/components",
+  },
+  {
+    name: "Props",
+    slug: "/react/props",
+  },
+];

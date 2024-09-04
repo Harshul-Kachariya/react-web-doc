@@ -63,27 +63,15 @@ export default InputValueComponent;
               </button>
             </div>
           ) : (
-            <div>
-              <div className="relative top-1">
-                <div className="flex flex-col gap-2">
-                  <input
-                    type="text"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    className="p-2 rounded-md hover:shadow-md  w-36 outline-none"
-                  />
-                  <p className="text-xl">
-                    Current Value: <strong>{value}</strong>
-                  </p>
-                </div>
-                <div className="absolute top-1 right-2   ">
-                  <button
-                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                    onClick={() => setValue("")}
-                  >
-                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                  </button>
-                </div>
+            <div className="relative top-1">
+              <div className="flex flex-col gap-2">
+                <input
+                  type="text"
+                  value={value}
+                  onChange={(e) => setValue(e.target.value)}
+                  className="p-2 rounded-md hover:shadow-md outline-none w-36 "
+                />
+                <p className="text-xl">Current Value: {value}</p>
               </div>
               <div className="absolute top-1 right-2   ">
                 <button

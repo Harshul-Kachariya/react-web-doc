@@ -183,6 +183,7 @@ function GreetingSelector({ value, onChange }) {
                   <label className="text-lg mr-6">Name:</label>
                   <input
                     type="text"
+                    value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="p-2 rounded-md hover:shadow-md outline-none"
                   />
@@ -191,6 +192,7 @@ function GreetingSelector({ value, onChange }) {
                   <label className="text-lg mr-4">Address:</label>
                   <input
                     type="text"
+                    value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     className="p-2 rounded-md hover:shadow-md outline-none"
                   />

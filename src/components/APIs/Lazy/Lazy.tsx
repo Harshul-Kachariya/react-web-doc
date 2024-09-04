@@ -2,7 +2,6 @@ import { useState } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../../CodeSnippets";
 import MarkdownEditor from "./Preview";
-import MainLayout from "../../Layout";
 
 const LazyComponent = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -203,7 +202,7 @@ export default function MarkdownPreview({ markdown }) {
               <div className="absolute top-1 right-2">
                 <button
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => {}}
+                  onClick={() => setPreview(false)}
                 >
                   <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                 </button>

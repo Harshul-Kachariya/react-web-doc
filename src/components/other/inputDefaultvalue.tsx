@@ -4,7 +4,7 @@ import { IoIosRefresh } from "react-icons/io";
 
 const InputDefaultValue = () => {
   const [preview, setPreview] = useState<boolean>(false);
-  const [value, setValue] = useState<string>("Default Value");
+  const [value, setValue] = useState<string>("Default value");
 
   return (
     <div>
@@ -59,31 +59,21 @@ export default InputDefaultValueComponent;
               </button>
             </div>
           ) : (
-            <div>
-              <div className="relative top-1">
-                <div className="flex flex-col gap-2">
-                  <input
-                    type="text"
-                    value={value}
-                    defaultValue={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    className="p-2 rounded-md hover:shadow-md  w-48 outline-none "
-                  />
-                  <p className="text-xl">Current Value: {value}</p>
-                </div>
-                <div className="absolute top-1 right-2   ">
-                  <button
-                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                    onClick={() => setValue("Default Value")}
-                  >
-                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                  </button>
-                </div>
+            <div className="relative top-1">
+              <div className="flex flex-col gap-2">
+                <input
+                  type="text"
+                  value={value}
+                  defaultValue={"Default Value"}
+                  onChange={(e) => setValue(e.target.value)}
+                  className="p-2 rounded-md hover:shadow-md  outline-none w-48 "
+                />
+                <p className="text-xl">Current Value: {value}</p>
               </div>
-              <div className="absolute top-1 right-2   ">
+              <div className="absolute top-1 right-2  ">
                 <button
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => setValue("")}
+                  onClick={() => setValue("Default value")}
                 >
                   <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                 </button>
