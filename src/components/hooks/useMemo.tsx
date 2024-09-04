@@ -104,16 +104,39 @@ export default ExampleComponent;
                 </div>
                 <span className="text-xl">Render Count: {count}</span>
               </div>
-              <div className="absolute top-1 right-2">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => {
-                    setCount(0);
-                    setInputValue(0);
-                  }}
-                >
-                  <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                </button>
+              ) : (
+              <div className="relative top-1">
+                <div className="flex flex-col gap-3">
+                  <input
+                    type="tel"
+                    value={memoizedValue}
+                    onChange={(e) => setInputValue(Number(e.target.value))}
+                    className="p-2 rounded-md hover:shadow-md outline-none w-36"
+                  />
+                  <span className="text-xl">
+                    Memoized Value: {memoizedValue}
+                  </span>
+                  <div className="mt-4">
+                    <button
+                      className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                      onClick={() => setCount(count + 1)}
+                    >
+                      You pressed me {count} times
+                    </button>
+                  </div>
+                  <span className="text-xl">Render Count: {count}</span>
+                </div>
+                <div className="absolute top-1 right-2">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={() => {
+                      setCount(0);
+                      setInputValue(0);
+                    }}
+                  >
+                    <IoIosRefresh className="text-xl text-white" />
+                  </button>
+                </div>
               </div>
             </div>
           )}

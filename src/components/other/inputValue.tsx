@@ -54,15 +54,13 @@ export default InputValueComponent;
         />
         <div className="col-span-1 p-2 bg-gray-400 rounded-lg mt-5">
           {!preview ? (
-            <div>
-              <div className="space-x-3 mt-4">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => setPreview(true)}
-                >
-                  Preview of code
-                </button>
-              </div>
+            <div className="space-x-3 mt-4">
+              <button
+                className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                onClick={() => setPreview(true)}
+              >
+                Preview of code
+              </button>
             </div>
           ) : (
             <div className="relative top-1">

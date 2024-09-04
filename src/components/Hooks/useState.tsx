@@ -95,7 +95,7 @@ export default function Counter() {
                     className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                     onClick={() => setCount(0)}
                   >
-                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
+                    <IoIosRefresh className="text-xl text-white" />
                   </button>
                 </div>
               </div>
@@ -108,3 +108,4 @@ export default function Counter() {
 };
 
 export default UseState;
+//  className="bg-white text-lg p-4 border-l-4 border-black rounded-lg w-[80%]"

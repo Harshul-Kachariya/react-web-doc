@@ -55,15 +55,13 @@ export default InputUpdateComponent;
         />
         <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
           {!preview ? (
-            <div>
-              <div className="space-x-3 ">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => setPreview(true)}
-                >
-                  Preview of code
-                </button>
-              </div>
+            <div className="space-x-3 ">
+              <button
+                className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                onClick={() => setPreview(true)}
+              >
+                Preview of code
+              </button>
             </div>
           ) : (
             <div className="relative top-1 min-h-48">
@@ -82,7 +80,7 @@ export default InputUpdateComponent;
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                   onClick={() => setInputValue("")}
                 >
-                  <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
+                  <IoIosRefresh className="text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                 </button>
               </div>
             </div>

@@ -5,6 +5,7 @@ import { IoIosRefresh } from "react-icons/io";
 const CheckboxEvent = () => {
   const [preview, setPreview] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React Checkbox Event</h1>
@@ -44,7 +45,7 @@ function CheckboxComponent() {
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-        Check me
+       Item is :
       </label>
       <p>{isChecked ? "Checked" : "Unchecked"}</p>
     </div>
@@ -56,35 +57,34 @@ export default CheckboxComponent;
         />
         <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
           {!preview ? (
-            <div>
-              <div className="space-x-3 ">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => setPreview(true)}
-                >
-                  Preview of code
-                </button>
-              </div>
+            <div className="space-x-3 ">
+              <button
+                className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                onClick={() => setPreview(true)}
+              >
+                Preview of code
+              </button>
             </div>
           ) : (
             <div className="relative top-1 min-h-48">
-              <label className="flex gap-3">
+              <label className="flex gap-3 ">
                 <input
                   type="radio"
                   checked={isChecked}
                   onChange={(e) => setIsChecked(e.target.checked)}
                 />
-                Option 1
+                Item is :
+                <p className="font-bold">
+                  {isChecked ? "Checked" : "Unchecked"}
+                </p>
               </label>
-
-              <p>{isChecked ? "Checked" : "Unchecked"}</p>
 
               <div className="absolute top-1 right-2">
                 <button
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                   onClick={() => setIsChecked(false)}
                 >
-                  <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
+                  <IoIosRefresh className="text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                 </button>
               </div>
             </div>

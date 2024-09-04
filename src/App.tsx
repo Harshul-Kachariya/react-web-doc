@@ -20,8 +20,7 @@ export default function App() {
           to="/gettingSarted"
           className="flex gap-2 justify-center items-center"
         >
-          <img className="h-6" src="../public/react.svg" alt="" /> React
-          Tutorial
+          <img className="h-6" src="/react.svg" alt="" /> React Tutorial
         </Link>
       </div>
       <button

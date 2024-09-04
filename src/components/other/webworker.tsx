@@ -1,62 +1,153 @@
+import { useState, useEffect } from "react";
+import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
 
 const webWorker = () => {
+  const [number, setNumber] = useState(0);
+  const [result, setResult] = useState(null);
+  const [preview, setPreview] = useState(false);
+
+  useEffect(() => {
+    if (preview) {
+      const worker = new Worker(new URL("/src/fibbonaci.tsx", import.meta.url));
+
+      worker.postMessage(number); // Send number to worker
+
+      worker.onmessage = function (e) {
+        setResult(e.data); // Receive result from worker
+      };
+
+      return () => {
+        worker.terminate(); // Clean up the worker when component unmounts
+      };
+    }
+  }, [preview, number]);
+
+  const handlePreview = () => {
+    setPreview(true);
+  };
+
+  const handleRefresh = () => {
+    setPreview(false);
+    setResult(null);
+    setNumber(0);
+  };
+
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-4">React Web Workers</h1>
+      <h1 className="text-3xl font-bold mb-4">
+        React Web Workers - Fibonacci Example
+      </h1>
       <p className="text-xl mb-4 w-[80%]">
-        Web Workers in React allow you to run scripts in background threads,
-        separate from the main execution thread. This enables you to perform
-        resource-intensive computations without blocking the user interface.
+        Web Workers in React can be used to perform complex computations, like
+        calculating the Fibonacci sequence, in the background to avoid blocking
+        the main thread.
       </p>
-      <p className="text-lg font-bold mb-2">Using Web Workers:</p>
+      <p className="text-lg font-bold mb-2">
+        Using Web Workers for Computation:
+      </p>
       <CodeSnippets
-        codeString={` const worker = new Worker('worker.js');`}
+        codeString={` const worker = new Worker('fibonacciWorker.js');`}
         showLineNumbers={false}
       />
+      <p className="mb-2 text-lg">
+        Enter a number to calculate the Fibonacci sequence using a Web Worker.
+      </p>
+      <h1 className="text-xl font-bold">Set this file in src folder </h1>
+      <h2 className="text-2xl font-bold mb-2 text-[#282c34] mt-5 font-mono">
+        fibonacciWorker.js
+      </h2>
 
-      <div className="bg-gray-200 rounded-lg py-4 mb-4">
-        <h2 className="text-lg font-bold mb-2">Example:</h2>
-        <p className="mb-2 text-lg">
-          Here’s an example of how to create and use a Web Worker in a React
-          application to perform a computation in the background.
-        </p>
+      <div className="bg-gray-200 rounded-lg  mb-4">
         <CodeSnippets
           codeString={`self.onmessage = function (e) {
-  const result = e.data * 2; // Example computation
+  const nth = e.data;
+  function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+
+  const result = fibonacci(nth);
   self.postMessage(result);
-};
+};`}
+        ></CodeSnippets>
+        <h2 className="text-2xl font-bold mb-2 text-[#282c34] mt-5 font-mono">
+          App.js
+        </h2>
+        <div className="h-96 overflow-y-auto rounded-md">
+          <CodeSnippets
+            codeString={`import { useEffect, useState } from "react";
 
-// main component
-import { useEffect, useState } from "react";
-
-function WebWorkerComponent() {
+function FibonacciWorkerExample() {
+  const [number, setNumber] = useState(0);
   const [result, setResult] = useState(null);
 
   useEffect(() => {
-    const worker = new Worker(new URL('./worker.js', import.meta.url));
+    const worker = new Worker(new URL('./fibonacciWorker.js', import.meta.url));
 
-    worker.postMessage(10); // Send data to worker
+    worker.postMessage(number); // Send number to worker
 
     worker.onmessage = function (e) {
-      setResult(e.data); // Receive data from worker
+      setResult(e.data); // Receive result from worker
     };
 
     return () => {
       worker.terminate(); // Clean up the worker when component unmounts
     };
-  }, []);
+  }, [number]);
 
   return (
     <div>
-      <p>Result from Web Worker: {result}</p>
+      <input 
+        type="number" 
+        value={number} 
+        onChange={(e) => setNumber(e.target.value)} 
+      />
+      <p> Result of Fibonacci Number : {!!result ? result : "Entered Number is Not Fibonacci"} </p>
     </div>
   );
 }
 
-export default WebWorkerComponent;
+export default FibonacciWorkerExample;
 `}
-        />
+          />
+        </div>
+        <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
+          {!preview ? (
+            <div className="space-x-3 ">
+              <input
+                type="number"
+                onChange={(e) => setNumber(Number(e.target.value))}
+                className="p-2 rounded-md hover:shadow-md outline-none"
+              />
+              <button
+                className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                onClick={handlePreview}
+              >
+                Preview of code
+              </button>
+            </div>
+          ) : (
+            <div className="relative top-1 min-h-32">
+              <div className="flex flex-col gap-2">
+                <p className="text-lg font-bold">
+                  {" "}
+                  Result of Fibonacci Number :{" "}
+                  {!!result ? result : "Entered Number is Not Fibonacci"}
+                </p>
+
+                <div className="absolute top-1 right-2 ">
+                  <button
+                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                    onClick={handleRefresh}
+                  >
+                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

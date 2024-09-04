@@ -29,7 +29,6 @@ import CheckboxDefaultChecked from "./components/other/CheckboxDefaultChecked.ts
 import InputDefaultValue from "./components/other/inputDefaultvalue.tsx";
 import RadioButtonDefaultValue from "./components/other/RadioButtonDefaultValue.tsx";
 import CheckboxChecked from "./components/other/checkboxchecked.tsx";
-
 import WebWorkerComponent from "./components/other/webworker";
 import WindowWidthComponent from "./components/Hooks/CustomHooks/WindowWidthComponent.tsx";
 import Tailwind from "./components/Styles/Tailwind.tsx";
@@ -44,14 +43,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      // {
-      //   path: "/",
-      //   element: (
-      //     <Suspense fallback={<>Laoding...</>}>
-      //       <Homepage />
-      //     </Suspense>
-      //   ),
-      // },
       {
         path: "/create-react-app",
         element: (

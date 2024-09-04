@@ -28,7 +28,7 @@ export const Hooks = [
     slug: "/useMemo",
   },
   {
-    name: "Custom Hooks",
+    name: "CustomHooks",
     slug: "/customHooks",
   },
 ];
