@@ -16,7 +16,7 @@ const OnFocusEvent = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React onFocus Event</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">onFocus</span> event handler is
         triggered when an element gains focus, such as when a user clicks into
         an input field. It can be used to highlight elements, show additional

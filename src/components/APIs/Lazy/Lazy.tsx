@@ -9,7 +9,7 @@ const LazyComponent = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4 text-[#282c34]">lazy</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         <span className="text-red-500"> lazy </span> lets you defer loading
         component’s code until it is rendered for the first time.
       </p>

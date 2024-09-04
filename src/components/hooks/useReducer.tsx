@@ -9,7 +9,7 @@ const UseReducer = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React useReducer Hook</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">useReducer</span> Hook is an
         alternative to <span className="text-red-500">useState</span> for
         managing complex state logic in a component. It’s particularly useful

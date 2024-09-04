@@ -18,7 +18,7 @@ const UseCallback = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React useCallback Hook</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">useCallback</span> Hook returns
         a memoized version of the callback function that only changes if one of
         the dependencies has changed. It helps optimize performance by

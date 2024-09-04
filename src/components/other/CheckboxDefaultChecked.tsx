@@ -11,7 +11,7 @@ const CheckboxDefaultChecked = () => {
       <h1 className="text-3xl font-bold mb-4">
         React Checkbox Default Checked
       </h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         Setting a default checked state for a checkbox in React involves
         specifying whether the checkbox should be checked or unchecked when the
         component initially renders. This can be achieved by setting the default

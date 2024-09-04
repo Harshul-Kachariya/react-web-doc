@@ -60,8 +60,8 @@ const ReactRouter = () => {
         </p>
       </div>
       <div className="bg-gray-200 rounded-lg py-4 mb-4">
-        <h2 className="text-xl font-bold mb-2 text-[#282c34]">Example:</h2>
-        <p className="mb-2 text-lg">
+        <h2 className="text-2xl font-bold mb-2 text-[#282c34]">Example:</h2>
+        <p className="mb-2 text-xl">
           Use React Router to route to pages based on URL:
         </p>
         <h2 className="text-2xl font-bold font-mono mb-2 text-[#282c34]">

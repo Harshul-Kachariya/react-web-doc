@@ -9,7 +9,7 @@ const CheckboxEvent = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React Checkbox Event</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">checkbox</span> event handler
         is used to capture the state of a checkbox, whether it is checked or
         unchecked. It’s commonly used in forms where a user can select multiple

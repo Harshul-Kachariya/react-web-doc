@@ -38,7 +38,7 @@ const webWorker = () => {
       <h1 className="text-3xl font-bold mb-4">
         React Web Workers - Fibonacci Example
       </h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         Web Workers in React can be used to perform complex computations, like
         calculating the Fibonacci sequence, in the background to avoid blocking
         the main thread.

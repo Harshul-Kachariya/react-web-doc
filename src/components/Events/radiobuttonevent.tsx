@@ -9,7 +9,7 @@ const RadioButtonEvent = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React RadioButton Event</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">radio button</span> event
         handler is used to capture the selection of a radio button. It allows
         you to determine which option a user has selected, commonly in forms

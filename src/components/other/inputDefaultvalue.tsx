@@ -9,7 +9,7 @@ const InputDefaultValue = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React Input Default Value</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         Setting a default value for an input field in React allows you to
         pre-fill the input with an initial value when the component first
         renders. This is useful for forms where you want to provide a starting

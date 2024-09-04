@@ -9,7 +9,7 @@ const CheckboxChecked = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React Checkbox Checked State</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         Managing the `checked` state of a checkbox in React allows you to
         control whether the checkbox is selected or not. This can be useful for
         tracking user selections and for controlling the state of forms.

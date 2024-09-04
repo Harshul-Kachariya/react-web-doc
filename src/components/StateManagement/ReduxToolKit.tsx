@@ -13,7 +13,7 @@ const ReduxToolKit = () => {
         <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
           Redux Toolkit
         </h2>
-        <p className="text-xl mb-4 w-[80%]">
+        <p className="text-xl mb-4 ">
           <span className="text-red-500"> Redux Toolkit</span> is the official,
           recommended way to write Redux logic. It simplifies common Redux
           patterns and reduces the amount of boilerplate code needed to manage

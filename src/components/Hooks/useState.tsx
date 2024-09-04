@@ -15,7 +15,7 @@ const UseState = () => {
       <h1 className="text-3xl font-bold mb-4 text-[#282c34]">
         React useState Hook
       </h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">useState</span> Hook allows us
         to track state in a function component. State generally refers to data
         or properties that need to be tracking in an application.
@@ -108,4 +108,4 @@ export default function Counter() {
 };
 
 export default UseState;
-//  className="bg-white text-lg p-4 border-l-4 border-black rounded-lg w-[80%]"
+//  className="bg-white text-lg p-4 border-l-4 border-black rounded-lg "

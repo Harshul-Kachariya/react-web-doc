@@ -14,7 +14,7 @@ const MemoComponent = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4 text-[#282c34]">memo</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         <span className="text-red-500"> memo</span> lets you skip re-rendering a
         component when its props are unchanged.
       </p>

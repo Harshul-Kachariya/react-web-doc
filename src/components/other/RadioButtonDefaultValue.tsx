@@ -14,7 +14,7 @@ const RadioButtonDefaultValue = () => {
       <h1 className="text-3xl font-bold mb-4">
         React Radio Button Default Value
       </h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         Setting a default value for radio buttons in React involves specifying
         which radio button should be selected when the component initially
         renders. This is done by setting the default state value or using the

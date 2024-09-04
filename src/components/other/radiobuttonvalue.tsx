@@ -13,7 +13,7 @@ const RadioButtonValue = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React Radio Button Value</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         Handling radio button values in React involves capturing the selected
         value from a group of radio buttons. This is commonly used in forms
         where a user needs to select one option from a set of mutually exclusive

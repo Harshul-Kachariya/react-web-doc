@@ -19,7 +19,7 @@ const OnBlurEvent = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React onBlur Event</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">onBlur</span> event handler is
         triggered when an element loses focus. It is commonly used in form
         validation to check if the input is valid once the user moves away from

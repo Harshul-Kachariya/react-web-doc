@@ -9,7 +9,7 @@ const OnChangeEvent = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React onChange Event</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">onChange</span> event handler
         is triggered when the value of an input element changes. It is commonly
         used to update the state as the user types or selects options, enabling

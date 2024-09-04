@@ -21,7 +21,7 @@ const UseEffect = () => {
       <h1 className="text-3xl font-bold mb-4 text-[#282c34]">
         React useEffect Hook
       </h1>
-      <p className="text-xl text-gray-600 mb-4 w-[80%]">
+      <p className="text-xl text-gray-600 mb-4 ">
         The React <span className="text-red-500">useEffect</span> Hook allows
         you to perform side effects in your function components. Some examples
         of side effects are: fetching data, directly updating the DOM, and

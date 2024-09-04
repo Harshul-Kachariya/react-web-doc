@@ -20,7 +20,7 @@ const UseMemo = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React useMemo Hook</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">useMemo</span> Hook returns a
         memoized value. It only recomputes the memoized value when one of the
         dependencies has changed. This can optimize performance by avoiding

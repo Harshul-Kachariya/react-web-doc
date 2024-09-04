@@ -13,7 +13,7 @@ const UseRef = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React useRef Hook</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">useRef</span> Hook allows you
         to persist values across renders without causing a re-render. It can be
         used to directly access a DOM element or to keep a mutable value around

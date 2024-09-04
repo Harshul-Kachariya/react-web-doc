@@ -11,7 +11,7 @@ const CuatomHook = () => {
       <h1 className="text-3xl font-bold mb-4 text-[#282c34]">
         React Custom Hook Example
       </h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         A custom hook is a JavaScript function whose name starts with "use" and
         that may call other hooks. Custom hooks offer the flexibility of sharing
         logic that wasn't possible in React components before.

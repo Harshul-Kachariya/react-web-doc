@@ -9,7 +9,7 @@ const InputValue = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React Input Value</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         Managing the value of an input field in React involves controlling and
         updating the input’s value through state. This allows you to capture
         user input and use it within your application, typically in forms or

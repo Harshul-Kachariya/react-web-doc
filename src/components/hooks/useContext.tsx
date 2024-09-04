@@ -10,7 +10,7 @@ const UseContext = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React useContext Hook</h1>
-      <p className="text-xl mb-4 w-[80%]">
+      <p className="text-xl mb-4 ">
         The React <span className="text-red-500">useContext</span> Hook allows
         you to use the context directly in your functional components. It
         simplifies accessing context values without needing to use a Context
