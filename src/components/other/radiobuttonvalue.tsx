@@ -81,42 +81,27 @@ export default RadioButtonValueComponent;
               </button>
             </div>
           ) : (
-            <div>
-              <div className="relative top-1 min-h-20">
-                <div className="flex gap-2 ">
-                  <label>
-                    <input
-                      type="radio"
-                      value="option1"
-                      checked={selectedValue === "option1"}
-                      onChange={handleChange}
-                    />
-                    Option 1
-                  </label>
-                  <br />
-                  <label>
-                    <input
-                      type="radio"
-                      value="option2"
-                      checked={selectedValue === "option2"}
-                      onChange={handleChange}
-                    />
-                    Option 2
-                  </label>
-                </div>
-                {selectedValue && (
-                  <p className="text-xl">
-                    Selected Value: <strong> {selectedValue}</strong>
-                  </p>
-                )}
-                <div className="absolute top-1 right-2   ">
-                  <button
-                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                    onClick={() => setSelectedValue("")}
-                  >
-                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                  </button>
-                </div>
+            <div className="relative top-1 min-h-20">
+              <div className="flex gap-2 ">
+                <label>
+                  <input
+                    type="radio"
+                    value="option1"
+                    checked={selectedValue === "option1"}
+                    onChange={handleChange}
+                  />
+                  Option 1
+                </label>
+                <br />
+                <label>
+                  <input
+                    type="radio"
+                    value="option2"
+                    checked={selectedValue === "option2"}
+                    onChange={handleChange}
+                  />
+                  Option 2
+                </label>
               </div>
               {selectedValue && (
                 <p className="text-xl">
