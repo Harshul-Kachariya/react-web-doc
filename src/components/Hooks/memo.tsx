@@ -180,7 +180,7 @@ function GreetingSelector({ value, onChange }) {
             <div className="relative top-1 flex flex-col gap-3">
               <div className="flex flex-col gap-2">
                 <div>
-                  <label className="text-lg mr-6">Name:</label>
+                  <label className="text-lg mr-8"> Name :</label>
                   <input
                     type="text"
                     value={name}
@@ -189,7 +189,7 @@ function GreetingSelector({ value, onChange }) {
                   />
                 </div>
                 <div>
-                  <label className="text-lg mr-4">Address:</label>
+                  <label className="text-lg mr-4">Address :</label>
                   <input
                     type="text"
                     value={address}

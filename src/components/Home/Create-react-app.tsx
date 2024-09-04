@@ -1,6 +1,7 @@
 import CodeSnippets from "./../CodeSnippets/index";
 
-import reactApp from "../../assets/react_create_react_app.png";
+// import reactApp from "../../assets/react_create_react_app.png";
+import reactApp from "../../assets/createreact_create_react_app.webp";
 
 const CreateReactApp = () => {
   return (
@@ -74,8 +75,8 @@ const CreateReactApp = () => {
         <p className="text-gray-700 my-4 text-xl">
           <strong>Preview of our firest react app :</strong>
         </p>
-        <div className="max-w-4xl border-none overflow-hidden">
-          <img src={reactApp} alt="cretae-react-app" className="rounded-md " />
+        <div className="max-w-8xl border-none overflow-hidden ">
+          <img src={reactApp} alt="create-react-app" className="rounded-md  " />
         </div>
       </section>
 

@@ -91,7 +91,9 @@ export default {
       <p className="text-xl font-bold mt-2">Preview : </p>
       <div className="col-span-1 p-2 bg-gray-400 rounded-lg ">
         <div className="relative top-1">
-          <h1 className="text-3xl font-bold underline ml-5">Hello world!</h1>
+          <h1 className="text-3xl font-bold underline ml-5 mb-2">
+            Hello world!
+          </h1>
         </div>
       </div>
     </div>

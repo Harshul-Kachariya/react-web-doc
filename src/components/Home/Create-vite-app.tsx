@@ -71,7 +71,7 @@ const CreateViteApp = () => {
         <p className="text-gray-700 my-4 text-xl">
           <strong>Preview of our firest react app :</strong>
         </p>
-        <div className="max-w-4xl border-none overflow-hidden">
+        <div className="max-w-8xl border-none overflow-hidden">
           <img src={viteApp} alt="cretae-react-app" className="rounded-md " />
         </div>
       </section>

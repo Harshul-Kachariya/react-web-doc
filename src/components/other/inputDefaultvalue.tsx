@@ -50,7 +50,7 @@ export default InputDefaultValueComponent;
         />
         <div className="col-span-1 p-2 bg-gray-400 rounded-lg mt-5">
           {!preview ? (
-            <div className="space-x-3 mt-4">
+            <div className="space-x-3 ">
               <button
                 className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                 onClick={() => setPreview(true)}
