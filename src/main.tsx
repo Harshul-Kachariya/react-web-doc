@@ -37,6 +37,7 @@ import LazyComponent from "./components/APIs/Lazy/Lazy.tsx";
 import ReduxToolKit from "./components/StateManagement/ReduxToolKit.tsx";
 import Components from "./components/React/Components.tsx";
 import Props from "./components/React/Props.tsx";
+import ReactRouter from "./components/Router/index.tsx";
 
 const router = createBrowserRouter([
   {
@@ -186,6 +187,10 @@ const router = createBrowserRouter([
       {
         path: "/react/props",
         element: <Props />,
+      },
+      {
+        path: "/react/router",
+        element: <ReactRouter />,
       },
     ],
   },

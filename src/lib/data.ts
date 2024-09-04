@@ -128,4 +128,8 @@ export const reactTypes = [
     name: "Props",
     slug: "/react/props",
   },
+  {
+    name: "React Router",
+    slug: "/react/router",
+  },
 ];
