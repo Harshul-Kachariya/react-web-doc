@@ -72,7 +72,7 @@ function ExampleComponent() {
 export default ExampleComponent;
 `}
         />
-        <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 min-h-48">
+        <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
           {!preview ? (
             <div>
               <div className="space-x-3 ">
@@ -85,7 +85,7 @@ export default ExampleComponent;
               </div>
             </div>
           ) : (
-            <div className="relative top-1">
+            <div className="relative top-1 min-h-48">
               <div className="flex flex-col gap-3">
                 <input
                   type="number"
@@ -104,39 +104,16 @@ export default ExampleComponent;
                 </div>
                 <span className="text-xl">Render Count: {count}</span>
               </div>
-              ) : (
-              <div className="relative top-1">
-                <div className="flex flex-col gap-3">
-                  <input
-                    type="tel"
-                    value={memoizedValue}
-                    onChange={(e) => setInputValue(Number(e.target.value))}
-                    className="p-2 rounded-md hover:shadow-md outline-none w-36"
-                  />
-                  <span className="text-xl">
-                    Memoized Value: {memoizedValue}
-                  </span>
-                  <div className="mt-4">
-                    <button
-                      className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                      onClick={() => setCount(count + 1)}
-                    >
-                      You pressed me {count} times
-                    </button>
-                  </div>
-                  <span className="text-xl">Render Count: {count}</span>
-                </div>
-                <div className="absolute top-1 right-2">
-                  <button
-                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                    onClick={() => {
-                      setCount(0);
-                      setInputValue(0);
-                    }}
-                  >
-                    <IoIosRefresh className="text-xl text-white" />
-                  </button>
-                </div>
+              <div className="absolute top-1 right-2">
+                <button
+                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+                  onClick={() => {
+                    setCount(0);
+                    setInputValue(0);
+                  }}
+                >
+                  <IoIosRefresh className="text-xl text-white" />
+                </button>
               </div>
             </div>
           )}

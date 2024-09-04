@@ -77,7 +77,8 @@ export default ParentComponent;
               </span>
               <div className="space-x-3 mt-4">
                 <input
-                  type="tel"
+                  type="number"
+                  value={count}
                   onChange={(e) => setCount(Number(e.target.value))}
                   className="p-2 rounded-md hover:shadow-md outline-none"
                 />
