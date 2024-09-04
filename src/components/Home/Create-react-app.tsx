@@ -21,8 +21,8 @@ const CreateReactApp = () => {
           Navigate to your project directory and start the development server:
         </p>
         <CodeSnippets
-          codeString={` cd my-react-app
- npm start`}
+          codeString={`   cd my-react-app
+   npm start`}
           showLineNumbers={false}
         />
         <div className="my-5">
@@ -30,27 +30,27 @@ const CreateReactApp = () => {
             Folder Structure of first react-app :
           </h2>
           <CodeSnippets
-            codeString={` my-app
- ├── README.md
- ├── node_modules
- ├── package.json
- ├── .gitignore
- ├── public
- │   ├── favicon.ico
- │   ├── index.html
- │   ├── logo192.png
- │   ├── logo512.png
- │   ├── manifest.json
- │   └── robots.txt
- └── src
- ├── App.css
-     ├── App.js
-     ├── App.test.js
-     ├── index.css
-     ├── index.js
-     ├── logo.svg
-     ├── serviceWorker.js
-     └── setupTests.js`}
+            codeString={`   my-app
+     ├── README.md
+     ├── node_modules
+     ├── package.json
+     ├── .gitignore
+     ├── public
+     │   ├── favicon.ico
+     │   ├── index.html
+     │   ├── logo192.png
+     │   ├── logo512.png
+     │   ├── manifest.json
+     │   └── robots.txt
+     └── src
+     ├── App.css
+         ├── App.js
+         ├── App.test.js
+         ├── index.css
+         ├── index.js
+         ├── logo.svg
+         ├── serviceWorker.js
+         └── setupTests.js`}
             showLineNumbers={false}
           />
         </div>
