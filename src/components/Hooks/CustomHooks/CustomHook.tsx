@@ -1,27 +1,24 @@
-import { useState } from "react";
 import CodeSnippets from "../../CodeSnippets";
 
 // Import the component that uses the custom hook
 import { useNavigate } from "react-router-dom";
 
 const CuatomHook = () => {
-  const [preview, setPreview] = useState<boolean>(false);
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-start ">
-      <div className="p-8 w-3/4">
-        <h1 className="text-3xl font-bold mb-4 text-[#282c34]">
-          React Custom Hook Example
-        </h1>
-        <p className="text-xl mb-4 w-[80%]">
-          A custom hook is a JavaScript function whose name starts with "use"
-          and that may call other hooks. Custom hooks offer the flexibility of
-          sharing logic that wasn't possible in React components before.
-        </p>
-        <p className="text-xl mb-2 text-[#282c34]">Example of a Custom Hook:</p>
-        <CodeSnippets
-          codeString={`import { useState, useEffect } from 'react';
+    <div>
+      <h1 className="text-3xl font-bold mb-4 text-[#282c34]">
+        React Custom Hook Example
+      </h1>
+      <p className="text-xl mb-4 w-[80%]">
+        A custom hook is a JavaScript function whose name starts with "use" and
+        that may call other hooks. Custom hooks offer the flexibility of sharing
+        logic that wasn't possible in React components before.
+      </p>
+      <p className="text-xl mb-2 text-[#282c34]">Example of a Custom Hook:</p>
+      <CodeSnippets
+        codeString={`import { useState, useEffect } from 'react';
 
 const useWindowWidth = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -36,23 +33,23 @@ const useWindowWidth = () => {
 
   return windowWidth;
 };`}
-        />
-        <div className="mt-5">
-          <p className="text-xl mb-2 ">
-            The custom hook <span className="text-red-500">useWindowWidth</span>
-            listens for window resize events and updates the state accordingly.
-            It can be used in any component to get the current window width.
-          </p>
-        </div>
-        <div className="bg-gray-200 rounded-lg py-4 mb-4">
-          <h2 className="text-xl font-bold mb-2 text-black">
-            Using the Custom Hook:
-          </h2>
-          <p className="mb-2 text-lg">
-            Let's see how to use the custom hook in a component.
-          </p>
-          <CodeSnippets
-            codeString={`import React from 'react';
+      />
+      <div className="mt-5">
+        <p className="text-xl mb-2 ">
+          The custom hook <span className="text-red-500">useWindowWidth</span>
+          listens for window resize events and updates the state accordingly. It
+          can be used in any component to get the current window width.
+        </p>
+      </div>
+      <div className="bg-gray-200 rounded-lg py-4 mb-4">
+        <h2 className="text-xl font-bold mb-2 text-[#282c34]">
+          Using the Custom Hook:
+        </h2>
+        <p className="mb-2 text-lg">
+          Let's see how to use the custom hook in a component.
+        </p>
+        <CodeSnippets
+          codeString={`import React from 'react';
 import useWindowWidth from '../hooks/useWindowWidth';
 
 const WindowWidthComponent = () => {
@@ -69,19 +66,14 @@ const WindowWidthComponent = () => {
 };
 
 export default WindowWidthComponent;`}
-          />
-          <div className="p-2 bg-gray-400 rounded-lg mt-4">
-            {/* {preview ? (
-              <WindowWidthComponent />
-            ) : ( */}
-            <button
-              className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-              onClick={() => navigate("/output/customHooks")}
-            >
-              Show Preview
-            </button>
-            {/* )} */}
-          </div>
+        />
+        <div className="p-2 bg-gray-400 rounded-lg mt-4">
+          <button
+            className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+            onClick={() => navigate("/output/customHooks")}
+          >
+            Show Preview
+          </button>
         </div>
       </div>
     </div>
