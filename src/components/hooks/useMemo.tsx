@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
+import CodePreview from "../PreviewBox";
 
 const UseMemo = () => {
   const [preview, setPreview] = useState(false);
@@ -72,7 +73,8 @@ function ExampleComponent() {
 export default ExampleComponent;
 `}
         />
-        <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
+
+        <CodePreview className="mt-5">
           {!preview ? (
             <div>
               <div className="space-x-3 ">
@@ -112,12 +114,12 @@ export default ExampleComponent;
                     setInputValue(0);
                   }}
                 >
-                  <IoIosRefresh className="text-xl text-white" />
+                  <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                 </button>
               </div>
             </div>
           )}
-        </div>
+        </CodePreview>
       </div>
     </div>
   );

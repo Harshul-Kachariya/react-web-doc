@@ -18,6 +18,7 @@ const UseCallback = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">React useCallback Hook</h1>
+
       <p className="text-xl mb-4 ">
         The React <span className="text-red-500">useCallback</span> Hook returns
         a memoized version of the callback function that only changes if one of
@@ -25,11 +26,14 @@ const UseCallback = () => {
         preventing unnecessary re-renders of components that rely on the
         callback function.
       </p>
+
       <p className="text-lg font-bold mb-2">Import useCallback:</p>
+
       <CodeSnippets
         codeString={` import { useCallback } from "react"`}
         showLineNumbers={false}
       />
+
       <div className="bg-gray-200 rounded-lg py-4 mb-4">
         <h2 className="text-lg font-bold mb-2">Example:</h2>
         <p className="mb-2 text-lg">
@@ -69,6 +73,7 @@ function ParentComponent() {
 export default ParentComponent;
 `}
         />
+
         <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5">
           {!preview ? (
             <div>
@@ -98,12 +103,14 @@ export default ParentComponent;
               >
                 You pressed me {count} times
               </button>
+
               <button
                 className="ml-3 bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                 onClick={addTodo}
               >
                 Add Todo
               </button>
+
               <div className="mt-4">
                 {todos.length > 0 && (
                   <>
@@ -114,6 +121,7 @@ export default ParentComponent;
                   </>
                 )}
               </div>
+
               <div className="absolute top-1 right-2">
                 <button
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"

@@ -1,11 +1,12 @@
+import { lazy, Suspense, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import "./App.css";
-import Sidebar from "./components/Sidebar";
-import MainLayout from "./components/Layout";
+import ReactSVG from "../public/react.svg";
+const Sidebar = lazy(() => import("./components/Sidebar"));
+const MainLayout = lazy(() => import("./components/Layout"));
 import { BsLayoutSidebarInset } from "react-icons/bs";
-import { useState } from "react";
 import { RiCloseLargeLine } from "react-icons/ri";
-import Homepage from "./components/Home";
+const Homepage = lazy(() => import("./components/Home"));
 
 export default function App() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -15,7 +16,7 @@ export default function App() {
     <div className="selection:bg-slate-300/40">
       <div className="bg-black text-xl w-full p-4 flex justify-center items-center text-white gap-2">
         <Link to="/" className="flex gap-2 justify-center items-center">
-          <img className="h-6" src="/react.svg" alt="" /> React Tutorial
+          <img className="h-6" src={ReactSVG} alt="react Logo" /> React Tutorial
         </Link>
       </div>
       <button
@@ -32,10 +33,16 @@ export default function App() {
               : "-translate-x-full lg:translate-x-0 hidden"
           } lg:flex lg:col-span-2 w-full h-screen lg:h-full bg-[#1f2229] text-white p-6 overflow-y-auto sidebar transition-transform duration-1000 ease-in transform`}
         >
-          <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} />
+          <Suspense fallback={<>Loading...</>}>
+            <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} />
+          </Suspense>
         </div>
         <div className="w-full col-span-1 lg:col-span-10 bg-gray-200 h-full overflow-y-auto sidebar relative">
-          {location.pathname === "/" && <Homepage />}
+          {location.pathname === "/" && (
+            <Suspense fallback={<>Laoding...</>}>
+              <Homepage />
+            </Suspense>
+          )}
           <MainLayout>
             <Outlet />
           </MainLayout>

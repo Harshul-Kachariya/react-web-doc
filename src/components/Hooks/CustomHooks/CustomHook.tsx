@@ -2,6 +2,7 @@ import CodeSnippets from "../../CodeSnippets";
 
 // Import the component that uses the custom hook
 import { useNavigate } from "react-router-dom";
+import CodePreview from "../../PreviewBox";
 
 const CuatomHook = () => {
   const navigate = useNavigate();
@@ -67,14 +68,14 @@ const WindowWidthComponent = () => {
 
 export default WindowWidthComponent;`}
         />
-        <div className="p-2 bg-gray-400 rounded-lg mt-4">
+        <CodePreview className="mt-4">
           <button
             className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
             onClick={() => navigate("/output/customHooks")}
           >
             Show Preview
           </button>
-        </div>
+        </CodePreview>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
+import CodePreview from "../PreviewBox";
 
 const ReduxToolKit = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -314,18 +315,15 @@ export function Counter() {
           }
         />
       </section>
-      <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
+
+      <CodePreview className="mt-5 ">
         {!preview ? (
-          <div>
-            <div className="space-x-3 ">
-              <button
-                className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                onClick={() => setPreview(true)}
-              >
-                Preview of code
-              </button>
-            </div>
-          </div>
+          <button
+            className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+            onClick={() => setPreview(true)}
+          >
+            Preview of code
+          </button>
         ) : (
           <div className="relative top-1 min-h-48">
             <div className="flex flex-col gap-3">
@@ -359,7 +357,8 @@ export function Counter() {
             </div>
           </div>
         )}
-      </div>
+      </CodePreview>
+
       <section className="mb-8">
         <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
           Key Features of Redux Toolkit

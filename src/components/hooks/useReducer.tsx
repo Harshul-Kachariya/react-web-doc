@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
+import CodePreview from "../PreviewBox";
 
 const UseReducer = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -60,7 +61,8 @@ function Counter() {
 export default Counter;
 `}
         />
-        <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
+
+        <CodePreview className="mt-5 ">
           {!preview ? (
             <div>
               <div className="space-x-3 ">
@@ -105,7 +107,7 @@ export default Counter;
               </div>
             </div>
           )}
-        </div>
+        </CodePreview>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CodeSnippets from "../CodeSnippets";
+import CodePreview from "../PreviewBox";
 
 const ReactRouter = () => {
   const routes = ["Home", "Blogs", "Content", "NoPage"];
@@ -95,7 +96,7 @@ export default function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);`}
           />
-          <div className=" p-2 bg-gray-400 rounded-lg ">
+          <CodePreview className="mt-5">
             {!preview ? (
               <div>
                 <button
@@ -135,7 +136,129 @@ root.render(<App />);`}
                 </div>
               </div>
             )}
-          </div>
+          </CodePreview>
+
+          <section>
+            <p className="text-xl mb-4 ">
+              We wrap our content first with{" "}
+              <span className="text-red-500">{`<BrowserRouter>`}</span>.
+            </p>
+            <p className="text-xl mb-4 ">
+              Then we define our{" "}
+              <span className="text-red-500">{` <Routes>.`}</span>.. An
+              application can have multiple
+              <span className="text-red-500">{` <Routes>`}</span>. Our basic
+              example only uses one.
+            </p>
+            <p className="text-xl mb-4 ">
+              <span className="text-red-500">{` <Routes>`}</span>s can be
+              nested. The first{" "}
+              <span className="text-red-500">{` <Routes>`}</span> has a path of
+              / and renders the Layout component.
+            </p>
+            <p className="text-xl mb-4 ">
+              The nested <span className="text-red-500">{` <Routes>`}</span>s
+              inherit and add to the parent route. So the blogs path is combined
+              with the parent and becomes{" "}
+              <span className="text-red-500">/blogs</span>.
+            </p>
+            <p className="text-xl mb-4 ">
+              The Home component route does not have a path but has an index
+              attribute. That specifies this route as the default route for the
+              parent route, which is <span className="text-red-500">/</span>.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-2 text-[#282c34]">
+              Pages / Components
+            </h2>
+            <p className="text-xl mb-4 ">
+              The <span className="text-red-500">{`<Outlet>`}</span> renders the
+              current route selected.
+            </p>
+            <p className="text-xl mb-4 ">
+              <span className="text-red-500">{`<Link>`}</span> is used to set
+              the URL and keep track of browsing history.
+            </p>
+
+            <div className="flex flex-col gap-4">
+              <h2 className="text-2xl font-bold font-mono  text-[#282c34]">
+                Layout.js
+              </h2>
+              <CodeSnippets
+                codeString={`import { Outlet, Link } from "react-router-dom";
+
+const Layout = () => {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/blogs">Blogs</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Outlet />
+    </>
+  )
+};
+
+export default Layout;`}
+              />
+
+              <h2 className="text-2xl font-bold font-mono  text-[#282c34]">
+                Home.js
+              </h2>
+              <CodeSnippets
+                codeString={`iconst Home = () => {
+  return <h1>Home</h1>;
+};
+
+export default Home;`}
+              />
+
+              <h2 className="text-2xl font-bold font-mono  text-[#282c34]">
+                Blogs.js
+              </h2>
+              <CodeSnippets
+                codeString={`const Blogs = () => {
+  return <h1>Blog Articles</h1>;
+};
+
+export default Blogs;`}
+              />
+
+              <h2 className="text-2xl font-bold font-mono  text-[#282c34]">
+                Contact.js
+              </h2>
+              <CodeSnippets
+                codeString={`const Contact = () => {
+  return <h1>Contact Me</h1>;
+};
+
+export default Contact;`}
+              />
+
+              <h2 className="text-2xl font-bold font-mono  text-[#282c34]">
+                NoPage.js
+              </h2>
+              <CodeSnippets
+                codeString={`const NoPage = () => {
+  return <h1>404 NoPage Found</h1>;
+};
+
+export default NoPage;`}
+              />
+            </div>
+          </section>
         </div>
       </div>
     </div>

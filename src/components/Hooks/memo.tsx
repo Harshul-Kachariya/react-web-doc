@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
+import CodePreview from "../PreviewBox";
 
 const MemoComponent = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -166,7 +167,8 @@ function GreetingSelector({ value, onChange }) {
 `}
           />
         </div>
-        <div className="col-span-1 p-2 bg-gray-400 rounded-lg mt-5">
+
+        <CodePreview className="mt-5">
           {!preview ? (
             <div>
               <button
@@ -237,7 +239,7 @@ function GreetingSelector({ value, onChange }) {
               </div>
             </div>
           )}
-        </div>
+        </CodePreview>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
+import CodePreview from "../PreviewBox";
 
 const UseState = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -62,7 +63,7 @@ export default function Counter() {
       `}
             />
           </div>
-          <div className="col-span-1 p-2 bg-gray-400 rounded-lg ">
+          <CodePreview>
             {!preview ? (
               <div>
                 <span className="text-xl ">
@@ -71,6 +72,7 @@ export default function Counter() {
                 <div className="space-x-3 mt-4">
                   <input
                     type="number"
+                    value={count}
                     onChange={(e) => setCount(Number(e.target.value))}
                     className="p-2 rounded-md hover:shadow-md outline-none"
                   />
@@ -83,7 +85,7 @@ export default function Counter() {
                 </div>
               </div>
             ) : (
-              <div className="relative top-1">
+              <div className="relative top-1 ">
                 <button
                   className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                   onClick={handleClick}
@@ -95,12 +97,12 @@ export default function Counter() {
                     className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
                     onClick={() => setCount(0)}
                   >
-                    <IoIosRefresh className="text-xl text-white" />
+                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
                   </button>
                 </div>
               </div>
             )}
-          </div>
+          </CodePreview>
         </div>
       </div>
     </div>
@@ -108,4 +110,3 @@ export default function Counter() {
 };
 
 export default UseState;
-//  className="bg-white text-lg p-4 border-l-4 border-black rounded-lg "

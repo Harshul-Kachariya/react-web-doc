@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CodeSnippets from "../CodeSnippets";
 import { IoIosRefresh } from "react-icons/io";
+import CodePreview from "../PreviewBox";
 
 const CheckboxChecked = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -53,18 +54,15 @@ function CheckboxCheckedComponent() {
 export default CheckboxCheckedComponent;
 `}
         />
-        <div className="col-span-1 p-2 bg-gray-400 rounded-lg mt-5">
+
+        <CodePreview className="mt-5">
           {!preview ? (
-            <div>
-              <div className="space-x-3 mt-4">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => setPreview(true)}
-                >
-                  Preview of code
-                </button>
-              </div>
-            </div>
+            <button
+              className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+              onClick={() => setPreview(true)}
+            >
+              Preview of code
+            </button>
           ) : (
             <div className="relative top-1">
               <div className="flex gap-2 ">
@@ -91,7 +89,7 @@ export default CheckboxCheckedComponent;
               </div>
             </div>
           )}
-        </div>
+        </CodePreview>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
+import CodePreview from "../PreviewBox";
 
 const webWorker = () => {
   const [number, setNumber] = useState(0);
@@ -112,7 +113,8 @@ export default FibonacciWorkerExample;
 `}
           />
         </div>
-        <div className="col-span-1 p-2 bg-gray-400 rounded-lg my-5 ">
+
+        <CodePreview className="mt-5 ">
           {!preview ? (
             <div className="space-x-3 ">
               <input
@@ -147,7 +149,7 @@ export default FibonacciWorkerExample;
               </div>
             </div>
           )}
-        </div>
+        </CodePreview>
       </div>
     </div>
   );

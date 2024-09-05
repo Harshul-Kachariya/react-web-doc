@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CodeSnippets from "../CodeSnippets";
 import { IoIosRefresh } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
+import CodePreview from "../PreviewBox";
 
 const UseEffect = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -131,7 +132,7 @@ function ExampleComponent() {
 `}
           />
 
-          <div className="col-span-1 p-2 bg-gray-400 rounded-lg ">
+          <CodePreview>
             {!preview ? (
               <div>
                 <div className="space-x-3 ">
@@ -144,7 +145,7 @@ function ExampleComponent() {
                 </div>
               </div>
             ) : (
-              <div className="relative top-1">
+              <div className="relative top-1 ">
                 <div className="flex flex-col gap-2">
                   <strong className="text-2xl ">{`I've rendered ${count2} times!`}</strong>
                   <button
@@ -164,7 +165,7 @@ function ExampleComponent() {
                 </div>
               </div>
             )}
-          </div>
+          </CodePreview>
         </div>
       </div>
     </div>

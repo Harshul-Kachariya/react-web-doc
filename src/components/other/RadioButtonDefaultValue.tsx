@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CodeSnippets from "../CodeSnippets";
 import { IoIosRefresh } from "react-icons/io";
+import CodePreview from "../PreviewBox";
 
 const RadioButtonDefaultValue = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -14,13 +15,16 @@ const RadioButtonDefaultValue = () => {
       <h1 className="text-3xl font-bold mb-4">
         React Radio Button Default Value
       </h1>
+
       <p className="text-xl mb-4 ">
         Setting a default value for radio buttons in React involves specifying
         which radio button should be selected when the component initially
         renders. This is done by setting the default state value or using the
         `checked` attribute.
       </p>
+
       <p className="text-lg font-bold mb-2">Setting Default Value:</p>
+
       <CodeSnippets
         codeString={` const [selectedValue, setSelectedValue] = useState("option1");`}
         showLineNumbers={false}
@@ -62,18 +66,15 @@ return (
 export default RadioButtonDefaultValueComponent;
 `}
         />
-        <div className="col-span-1 p-2 bg-gray-400 rounded-lg mt-5">
+
+        <CodePreview className=" mt-5">
           {!preview ? (
-            <div>
-              <div className="space-x-3 mt-4">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => setPreview(true)}
-                >
-                  Preview of code
-                </button>
-              </div>
-            </div>
+            <button
+              className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
+              onClick={() => setPreview(true)}
+            >
+              Preview of code
+            </button>
           ) : (
             <div className="relative top-1">
               <div className="flex gap-2 ">
@@ -110,7 +111,7 @@ export default RadioButtonDefaultValueComponent;
               </div>
             </div>
           )}
-        </div>
+        </CodePreview>
       </div>
     </div>
   );
