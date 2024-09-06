@@ -14,8 +14,11 @@ const DynamicRoutes = () => {
   const [routeName, setRouteName] = useState<string>(
     location?.pathname.replace("/", "")
   );
+
   const [secondPreview, setSecondPreview] = useState<string>("login");
+
   const [userId, setUserId] = useState<string>("123456");
+
   const [formData, setFormData] = useState<any>({
     username: "",
     password: "",
@@ -28,6 +31,7 @@ const DynamicRoutes = () => {
       username: e.target.username.value,
       password: e.target.password.value,
     });
+
     console.log(formData);
     if (formData.username === "" && formData.password === "") {
       setSecondPreview("dashboard");
@@ -193,7 +197,9 @@ export default function RoutePath() {
                 </div>
 
                 {secondPreview === "dashboard" ? (
-                  <span>Welcome {formData.username}</span>
+                  <span>
+                    Welcome <strong>{formData.username}</strong>
+                  </span>
                 ) : (
                   <form action="" onSubmit={handleSubmit} className="space-x-2">
                     <input type="text" name="username" placeholder="Username" />
@@ -236,6 +242,7 @@ export default function RoutePath() {
             current URL that were matched by the
             <span className="text-red-500">{` <Route path>`}</span>.
           </p>
+
           <CodeSnippets
             codeString={`import * as React from 'react';
 import {  useParams } from 'react-router-dom';
@@ -258,6 +265,7 @@ function App() {
   );
 }`}
           />
+
           <CodePreview className="mt-5">
             {!preview ? (
               <div>

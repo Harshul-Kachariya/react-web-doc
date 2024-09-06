@@ -1,7 +1,6 @@
 import { lazy, Suspense, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import "./App.css";
-import ReactSVG from "../public/react.svg";
 const Sidebar = lazy(() => import("./components/Sidebar"));
 const MainLayout = lazy(() => import("./components/Layout"));
 import { BsLayoutSidebarInset } from "react-icons/bs";
@@ -16,7 +15,8 @@ export default function App() {
     <div className="selection:bg-slate-300/40">
       <div className="bg-black text-xl w-full p-4 flex justify-center items-center text-white gap-2">
         <Link to="/" className="flex gap-2 justify-center items-center">
-          <img className="h-6" src={ReactSVG} alt="react Logo" /> React Tutorial
+          <img className="h-6" src="/react.svg" alt="react Logo" /> React
+          Tutorial
         </Link>
       </div>
       <button
