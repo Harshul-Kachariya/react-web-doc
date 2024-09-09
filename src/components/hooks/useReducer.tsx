@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
-import CodePreview from "../PreviewBox";
+import CodePreview, { RefreshButton, Span } from "../PreviewBox";
 
 const UseReducer = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -11,11 +10,10 @@ const UseReducer = () => {
     <div>
       <h1 className="text-3xl font-bold mb-4">React useReducer Hook</h1>
       <p className="text-xl mb-4 ">
-        The React <span className="text-red-500">useReducer</span> Hook is an
-        alternative to <span className="text-red-500">useState</span> for
-        managing complex state logic in a component. It’s particularly useful
-        for managing state that involves multiple sub-values or when the next
-        state depends on the previous one.
+        The React <Span>useReducer</Span> Hook is an alternative to{" "}
+        <Span>useState</Span> for managing complex state logic in a component.
+        It’s particularly useful for managing state that involves multiple
+        sub-values or when the next state depends on the previous one.
       </p>
       <p className="text-lg font-bold mb-2">Import useReducer:</p>
       <CodeSnippets
@@ -25,10 +23,9 @@ const UseReducer = () => {
       <div className="bg-gray-200 rounded-lg py-4 mb-4">
         <h2 className="text-lg font-bold mb-2">Example:</h2>
         <p className="mb-2 text-lg">
-          To use the <span className="text-red-500">useReducer</span> Hook,
-          define a reducer function that takes the current state and an action,
-          then returns a new state. Use{" "}
-          <span className="text-red-500">useReducer</span>
+          To use the <Span>useReducer</Span> Hook, define a reducer function
+          that takes the current state and an action, then returns a new state.
+          Use <Span>useReducer</Span>
           to get the current state and a dispatch function to update it.
         </p>
         <CodeSnippets
@@ -75,7 +72,7 @@ export default Counter;
               </div>
             </div>
           ) : (
-            <div className="relative top-1 min-h-48">
+            <RefreshButton className="min-h-48" onClick={() => setCount(0)}>
               <div className="flex flex-col gap-3">
                 <div className="mt-4 flex flex-col gap-3">
                   <span className="text-xl">Count: {count}</span>
@@ -95,17 +92,7 @@ export default Counter;
                   </div>
                 </div>
               </div>
-              <div className="absolute top-1 right-2">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => {
-                    setCount(0);
-                  }}
-                >
-                  <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                </button>
-              </div>
-            </div>
+            </RefreshButton>
           )}
         </CodePreview>
       </div>

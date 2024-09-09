@@ -1,8 +1,7 @@
 import { useState } from "react";
 import CodeSnippets from "../CodeSnippets";
-import CodePreview from "../PreviewBox";
+import CodePreview, { BrowserView, RefreshButton, Span } from "../PreviewBox";
 import { useLocation } from "react-router-dom";
-import { IoIosRefresh } from "react-icons/io";
 
 const DynamicRoutes = () => {
   const location = useLocation();
@@ -41,13 +40,10 @@ const DynamicRoutes = () => {
   return (
     <div>
       <section>
-        <h1 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Dynamic Routes
-        </h1>
+        <h1 className="title">Dynamic Routes</h1>
 
         <p className="text-xl mb-4 ">
-          The <span className="text-red-500">Dynamic Routes</span> allows to get
-          the params from routes.
+          The <Span>Dynamic Routes</Span> allows to get the params from routes.
         </p>
 
         <div className="space-y-3">
@@ -55,9 +51,8 @@ const DynamicRoutes = () => {
             {`useLocation():`}
           </h2>
           <p className="text-xl">
-            The <span className="text-red-500">{`useLocation()`}</span> hook
-            returns the
-            <span className="text-red-500">pathname</span> of the current route.
+            The <Span>{`useLocation()`}</Span> hook returns the
+            <Span>pathname</Span> of the current route.
           </p>
           <CodeSnippets
             codeString={`import { useLocation } from 'react-router-dom';
@@ -82,41 +77,43 @@ export default function RoutePath() {
                 </button>
               </div>
             ) : (
-              <div className="relative top-1 min-h-40 ">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <div className="flex gap-2">
-                    <span className="w-3 h-3 rounded-full bg-red-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-green-600"></span>
+              <RefreshButton className="min-h-40 " isShow={false}>
+                <>
+                  <div className="flex items-center justify-center gap-3 mb-3">
+                    <div className="flex gap-2">
+                      <span className="w-3 h-3 rounded-full bg-red-600"></span>
+                      <span className="w-3 h-3 rounded-full bg-yellow-600"></span>
+                      <span className="w-3 h-3 rounded-full bg-green-600"></span>
+                    </div>
+                    <div
+                      className="w-full h-7 rounded-xl bg-gray-300  px-2"
+                      onClick={() => setEdit(true)}
+                    >
+                      http://localhost:5173/
+                      {edit ? (
+                        <input
+                          type="text"
+                          value={routeName}
+                          onChange={(e) => setRouteName(e.target.value)}
+                          className="h-full bg-gray-100 outline-none"
+                        />
+                      ) : (
+                        routeName
+                      )}
+                    </div>
                   </div>
-                  <div
-                    className="w-full h-7 rounded-xl bg-gray-300  px-2"
-                    onClick={() => setEdit(true)}
-                  >
-                    http://localhost:5173/
-                    {edit ? (
-                      <input
-                        type="text"
-                        value={routeName}
-                        onChange={(e) => setRouteName(e.target.value)}
-                        className="h-full bg-gray-100 outline-none"
-                      />
-                    ) : (
-                      routeName
-                    )}
+
+                  <hr className="mt-2" />
+
+                  <div className="text-xl ml-5">
+                    Current Route : <strong> {routeName}</strong>
                   </div>
-                </div>
-
-                <hr className="mt-2" />
-
-                <div className="text-xl ml-5">
-                  Current Route : <strong> {routeName}</strong>
-                </div>
-                <span className="text-red-600 ">
-                  *if you try out how it's works Click on the url and you can
-                  chnage and see Magic
-                </span>
-              </div>
+                  <Span>
+                    *if you try out how it's works Click on the url and you can
+                    chnage and see Magic
+                  </Span>
+                </>
+              </RefreshButton>
             )}
           </CodePreview>
         </div>
@@ -126,8 +123,8 @@ export default function RoutePath() {
             {`useNavigate():`}
           </h2>
           <p className="text-xl">
-            The <span className="text-red-500">{`useNavigate()`}</span> hook
-            navigate to the <span className="text-red-500">pathname</span>.
+            The <Span>{`useNavigate()`}</Span> hook navigate to the{" "}
+            <Span>pathname</Span>.
           </p>
           <CodeSnippets
             codeString={`import { useState } from 'react';
@@ -175,59 +172,51 @@ export default function RoutePath() {
                 </button>
               </div>
             ) : (
-              <div className="relative top-1 min-h-40 ">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <div className="flex gap-2">
-                    <span className="w-3 h-3 rounded-full bg-red-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-green-600"></span>
+              <RefreshButton
+                className="min-h-40 "
+                onClick={() => {
+                  {
+                    setFormData({
+                      username: "",
+                      password: "",
+                    });
+                    setSecondPreview("login");
+                  }
+                }}
+              >
+                <BrowserView
+                  url={` http://localhost:5173/${secondPreview}`}
+                  onClick={() => setEdit(true)}
+                >
+                  <div className="text-xl my-3">
+                    Current Route : <strong> {secondPreview}</strong>
                   </div>
-                  <div
-                    className="w-full h-7 rounded-xl bg-gray-300  px-2"
-                    onClick={() => setEdit(true)}
-                  >
-                    http://localhost:5173/{secondPreview}
-                  </div>
-                </div>
 
-                <hr className="mt-2" />
-
-                <div className="text-xl my-3">
-                  Current Route : <strong> {secondPreview}</strong>
-                </div>
-
-                {secondPreview === "dashboard" ? (
-                  <span>
-                    Welcome <strong>{formData.username}</strong>
-                  </span>
-                ) : (
-                  <form action="" onSubmit={handleSubmit} className="space-x-2">
-                    <input type="text" name="username" placeholder="Username" />
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                    />
-                    <button type="submit">Submit</button>
-                  </form>
-                )}
-                <div className="absolute top-11 right-2   ">
-                  <button
-                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                    onClick={() => {
-                      {
-                        setFormData({
-                          username: "",
-                          password: "",
-                        });
-                        setSecondPreview("login");
-                      }
-                    }}
-                  >
-                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                  </button>
-                </div>
-              </div>
+                  {secondPreview === "dashboard" ? (
+                    <span>
+                      Welcome <strong>{formData.username}</strong>
+                    </span>
+                  ) : (
+                    <form
+                      action=""
+                      onSubmit={handleSubmit}
+                      className="space-x-2"
+                    >
+                      <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                      />
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                      />
+                      <button type="submit">Submit</button>
+                    </form>
+                  )}
+                </BrowserView>
+              </RefreshButton>
             )}
           </CodePreview>
         </div>
@@ -237,10 +226,10 @@ export default function RoutePath() {
             {`useParams():`}
           </h2>
           <p className="text-xl">
-            The <span className="text-red-500">{`useParams()`}</span> hook
-            returns an object of key/value pairs of the dynamic params from the
-            current URL that were matched by the
-            <span className="text-red-500">{` <Route path>`}</span>.
+            The <Span>{`useParams()`}</Span> hook returns an object of key/value
+            pairs of the dynamic params from the current URL that were matched
+            by the
+            <Span>{` <Route path>`}</Span>.
           </p>
 
           <CodeSnippets
@@ -277,25 +266,14 @@ function App() {
                 </button>
               </div>
             ) : (
-              <div className="relative top-1 min-h-40 ">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <div className="flex gap-2">
-                    <span className="w-3 h-3 rounded-full bg-red-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-green-600"></span>
-                  </div>
-                  <div
-                    className="w-full h-7 rounded-xl bg-gray-300  px-2"
-                    onClick={() => setEdit(true)}
-                  >
-                    http://localhost:5173/users?userId={userId}
-                  </div>
-                </div>
-
-                <hr className="mt-2" />
-
-                <span className="text-xl"> Profile for user: {userId}</span>
-              </div>
+              <RefreshButton className="min-h-40 " isShow={false}>
+                <BrowserView
+                  url={`http://localhost:5173/users?userId=${userId}
+`}
+                >
+                  <span className="text-xl"> Profile for user: {userId}</span>
+                </BrowserView>
+              </RefreshButton>
             )}
           </CodePreview>
         </div>

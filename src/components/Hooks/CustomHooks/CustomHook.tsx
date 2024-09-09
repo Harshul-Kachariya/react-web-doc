@@ -2,16 +2,14 @@ import CodeSnippets from "../../CodeSnippets";
 
 // Import the component that uses the custom hook
 import { useNavigate } from "react-router-dom";
-import CodePreview from "../../PreviewBox";
+import CodePreview, { Span } from "../../PreviewBox";
 
 const CuatomHook = () => {
   const navigate = useNavigate();
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-4 text-[#282c34]">
-        React Custom Hook Example
-      </h1>
+      <h1 className="title">React Custom Hook Example</h1>
       <p className="text-xl mb-4 ">
         A custom hook is a JavaScript function whose name starts with "use" and
         that may call other hooks. Custom hooks offer the flexibility of sharing
@@ -37,7 +35,7 @@ const useWindowWidth = () => {
       />
       <div className="mt-5">
         <p className="text-xl mb-2 ">
-          The custom hook <span className="text-red-500">useWindowWidth</span>
+          The custom hook <Span>useWindowWidth</Span>
           listens for window resize events and updates the state accordingly. It
           can be used in any component to get the current window width.
         </p>

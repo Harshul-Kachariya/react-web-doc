@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
-import CodePreview from "../PreviewBox";
+import CodePreview, { RefreshButton, Span } from "../PreviewBox";
 
 const ReduxToolKit = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -11,20 +10,15 @@ const ReduxToolKit = () => {
   return (
     <div>
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Redux Toolkit
-        </h2>
+        <h2 className="title">Redux Toolkit</h2>
         <p className="text-xl mb-4 ">
-          <span className="text-red-500"> Redux Toolkit</span> is the official,
-          recommended way to write Redux logic. It simplifies common Redux
-          patterns and reduces the amount of boilerplate code needed to manage
-          state in your application.
+          <Span> Redux Toolkit</Span> is the official, recommended way to write
+          Redux logic. It simplifies common Redux patterns and reduces the
+          amount of boilerplate code needed to manage state in your application.
         </p>
       </section>
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          What is Redux?
-        </h2>
+        <h2 className="title">What is Redux?</h2>
         <p className="text-xl mb-2 text-[#282c34]">
           Redux is a state management library for JavaScript applications. It
           provides a centralized store for managing the state of your
@@ -33,9 +27,7 @@ const ReduxToolKit = () => {
         </p>
       </section>
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Why Use Redux Toolkit?
-        </h2>
+        <h2 className="title">Why Use Redux Toolkit?</h2>
         <ul className="list-disc ml-8 mb-4 text-xl  text-[#282c34]">
           <li>
             <strong>Simpler Code:</strong> Reduces boilerplate and repetitive
@@ -53,9 +45,7 @@ const ReduxToolKit = () => {
         </ul>
       </section>
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Key Concepts in Redux Toolkit
-        </h2>
+        <h2 className="title">Key Concepts in Redux Toolkit</h2>
         <ul className="list-disc ml-8 mb-4 text-xl  text-[#282c34]">
           <li>
             <strong>Store:</strong> The centralized place where all the
@@ -77,9 +67,7 @@ const ReduxToolKit = () => {
         </ul>
       </section>
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Getting Started with Redux Toolkit
-        </h2>
+        <h2 className="title">Getting Started with Redux Toolkit</h2>
         <p className="text-xl mb-2 text-[#282c34]">
           Let's set up Redux Toolkit in a React application.
         </p>
@@ -325,7 +313,12 @@ export function Counter() {
             Preview of code
           </button>
         ) : (
-          <div className="relative top-1 min-h-48">
+          <RefreshButton
+            className="min-h-48"
+            onClick={() => {
+              setCount(0);
+            }}
+          >
             <div className="flex flex-col gap-3">
               <div className="mt-4 flex flex-col gap-3">
                 <span className="text-xl">Count: {count}</span>
@@ -345,24 +338,12 @@ export function Counter() {
                 </div>
               </div>
             </div>
-            <div className="absolute top-1 right-2">
-              <button
-                className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                onClick={() => {
-                  setCount(0);
-                }}
-              >
-                <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-              </button>
-            </div>
-          </div>
+          </RefreshButton>
         )}
       </CodePreview>
 
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Key Features of Redux Toolkit
-        </h2>
+        <h2 className="title">Key Features of Redux Toolkit</h2>
         <ul className="list-disc ml-8 mb-4 text-xl  text-[#282c34]">
           <li>
             <strong>
@@ -398,9 +379,7 @@ export function Counter() {
         </ul>
       </section>
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Best Practices
-        </h2>
+        <h2 className="title">Best Practices</h2>
         <ul className="list-disc ml-8 mb-4 text-xl  text-[#282c34]">
           <li>
             <strong>Keep State Normalized:</strong> Store data in a normalized
@@ -419,9 +398,7 @@ export function Counter() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-[#282c34]">
-          Additional Resources
-        </h2>
+        <h2 className="title">Additional Resources</h2>
         <ul className="list-disc ml-8">
           <li>
             <a

@@ -31,7 +31,7 @@ export default function App() {
             isOpen
               ? "flex translate-x-0 transition-transform duration-1000 ease-linear"
               : "-translate-x-full lg:translate-x-0 hidden"
-          } lg:flex lg:col-span-2 w-full h-screen lg:h-full bg-[#1f2229] text-white p-6 overflow-y-auto sidebar transition-transform duration-1000 ease-in transform`}
+          } lg:flex  lg:col-span-2 w-full h-screen lg:h-full bg-[#1f2229] text-white p-6 overflow-y-auto sidebar transition-transform duration-1000 ease-in transform`}
         >
           <Suspense fallback={<>Loading...</>}>
             <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} />

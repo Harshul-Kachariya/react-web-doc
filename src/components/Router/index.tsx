@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CodeSnippets from "../CodeSnippets";
-import CodePreview from "../PreviewBox";
+import CodePreview, { BrowserView, RefreshButton, Span } from "../PreviewBox";
 
 const ReactRouter = () => {
   const routes = ["Home", "Blogs", "Content", "NoPage"];
@@ -14,7 +14,7 @@ const ReactRouter = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-4 text-[#282c34]">React Router</h1>
+      <h1 className="title">React Router</h1>
       <p className="text-xl mb-4">
         Create React App doesn't include page routing.
       </p>
@@ -107,65 +107,52 @@ root.render(<App />);`}
                 </button>
               </div>
             ) : (
-              <div className="relative top-1 min-h-40 ">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <div className="flex gap-2">
-                    <span className="w-3 h-3 rounded-full bg-red-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-600"></span>
-                    <span className="w-3 h-3 rounded-full bg-green-600"></span>
+              <RefreshButton className="min-h-40 " isShow={false}>
+                <BrowserView url={`http://localhost:5173/${routeName}`}>
+                  <div className="flex gap-3">
+                    {routes.map((item) => (
+                      <button
+                        className={`${
+                          item === routeName ? "text-red-600" : "text-blue-900"
+                        }    underline `}
+                        onClick={() => handleClick(item)}
+                      >
+                        {item}
+                      </button>
+                    ))}
                   </div>
-                  <div className="w-full h-7 rounded-xl bg-gray-300  px-2">
-                    http://localhost:5173/{routeName}
+                  <hr className="mt-2" />
+                  <div className="text-xl">
+                    {routeName} Page {routeName === "NoPage" && "Found"}
                   </div>
-                </div>
-                <div className="flex gap-3">
-                  {routes.map((item) => (
-                    <button
-                      className={`${
-                        item === routeName ? "text-red-600" : "text-blue-900"
-                      }    underline `}
-                      onClick={() => handleClick(item)}
-                    >
-                      {item}
-                    </button>
-                  ))}
-                </div>
-                <hr className="mt-2" />
-                <div className="text-xl">
-                  {routeName} Page {routeName === "NoPage" && "Found"}
-                </div>
-              </div>
+                </BrowserView>
+              </RefreshButton>
             )}
           </CodePreview>
 
           <section>
             <p className="text-xl mb-4 ">
-              We wrap our content first with{" "}
-              <span className="text-red-500">{`<BrowserRouter>`}</span>.
+              We wrap our content first with <Span>{`<BrowserRouter>`}</Span>.
             </p>
             <p className="text-xl mb-4 ">
-              Then we define our{" "}
-              <span className="text-red-500">{` <Routes>.`}</span>.. An
-              application can have multiple
-              <span className="text-red-500">{` <Routes>`}</span>. Our basic
-              example only uses one.
+              Then we define our <Span>{` <Routes> `}</Span> An application can
+              have multiple
+              <Span>{` <Routes> `}</Span> Our basic example only uses one.
             </p>
             <p className="text-xl mb-4 ">
-              <span className="text-red-500">{` <Routes>`}</span>s can be
-              nested. The first{" "}
-              <span className="text-red-500">{` <Routes>`}</span> has a path of
-              / and renders the Layout component.
+              <Span>{` <Routes>`}</Span>s can be nested. The first{" "}
+              <Span>{` <Routes>`}</Span> has a path of / and renders the Layout
+              component.
             </p>
             <p className="text-xl mb-4 ">
-              The nested <span className="text-red-500">{` <Routes>`}</span>s
-              inherit and add to the parent route. So the blogs path is combined
-              with the parent and becomes{" "}
-              <span className="text-red-500">/blogs</span>.
+              The nested <Span>{` <Routes>`}</Span>s inherit and add to the
+              parent route. So the blogs path is combined with the parent and
+              becomes <Span>/blogs</Span>.
             </p>
             <p className="text-xl mb-4 ">
               The Home component route does not have a path but has an index
               attribute. That specifies this route as the default route for the
-              parent route, which is <span className="text-red-500">/</span>.
+              parent route, which is <Span>/</Span>.
             </p>
           </section>
 
@@ -174,12 +161,11 @@ root.render(<App />);`}
               Pages / Components
             </h2>
             <p className="text-xl mb-4 ">
-              The <span className="text-red-500">{`<Outlet>`}</span> renders the
-              current route selected.
+              The <Span>{`<Outlet>`}</Span> renders the current route selected.
             </p>
             <p className="text-xl mb-4 ">
-              <span className="text-red-500">{`<Link>`}</span> is used to set
-              the URL and keep track of browsing history.
+              <Span>{`<Link>`}</Span> is used to set the URL and keep track of
+              browsing history.
             </p>
 
             <div className="flex flex-col gap-4">

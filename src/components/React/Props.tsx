@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
-import CodePreview from "../PreviewBox";
+import CodePreview, { RefreshButton } from "../PreviewBox";
 
 const Props = () => {
   const [preview, setPreview] = useState<boolean>(false);
@@ -9,7 +9,7 @@ const Props = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-4 text-[#282c34]">React Props</h1>
+      <h1 className="title">React Props</h1>
 
       <p className="flex flex-col gap-2 text-xl mb-4">
         <span> Props are arguments passed into React components.</span>
@@ -63,20 +63,15 @@ const Props = () => {
               </button>
             </div>
           ) : (
-            <div className="relative top-1 min-h-16">
+            <RefreshButton
+              className="relative top-1 min-h-16"
+              onClick={() => {
+                setvalue("");
+                setPreview(false);
+              }}
+            >
               <p className="text-xl">Hi, I am a {value} car!</p>
-              <div className="absolute top-1 right-2   ">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => {
-                    setvalue("");
-                    setPreview(false);
-                  }}
-                >
-                  <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                </button>
-              </div>
-            </div>
+            </RefreshButton>
           )}
         </CodePreview>
       </div>

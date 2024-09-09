@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { IoIosRefresh } from "react-icons/io";
 import CodeSnippets from "../CodeSnippets";
-import CodePreview from "../PreviewBox";
+import CodePreview, { RefreshButton } from "../PreviewBox";
 
 const webWorker = () => {
   const [number, setNumber] = useState(0);
@@ -130,24 +130,13 @@ export default FibonacciWorkerExample;
               </button>
             </div>
           ) : (
-            <div className="relative top-1 min-h-32">
-              <div className="flex flex-col gap-2">
-                <p className="text-lg font-bold">
-                  {" "}
-                  Result of Fibonacci Number :{" "}
-                  {!!result ? result : "Entered Number is Not Fibonacci"}
-                </p>
-
-                <div className="absolute top-1 right-2 ">
-                  <button
-                    className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                    onClick={handleRefresh}
-                  >
-                    <IoIosRefresh className="text-xl text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                  </button>
-                </div>
-              </div>
-            </div>
+            <RefreshButton className="min-h-32" onClick={handleRefresh}>
+              <p className="text-lg font-bold">
+                {" "}
+                Result of Fibonacci Number :{" "}
+                {!!result ? result : "Entered Number is Not Fibonacci"}
+              </p>
+            </RefreshButton>
           )}
         </CodePreview>
       </div>

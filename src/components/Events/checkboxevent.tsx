@@ -1,7 +1,6 @@
 import { useState } from "react";
 import CodeSnippets from "../CodeSnippets";
-import { IoIosRefresh } from "react-icons/io";
-import CodePreview from "../PreviewBox";
+import CodePreview, { RefreshButton, Span } from "../PreviewBox";
 
 const CheckboxEvent = () => {
   const [preview, setPreview] = useState(false);
@@ -11,10 +10,9 @@ const CheckboxEvent = () => {
     <div>
       <h1 className="text-3xl font-bold mb-4">React Checkbox Event</h1>
       <p className="text-xl mb-4 ">
-        The React <span className="text-red-500">checkbox</span> event handler
-        is used to capture the state of a checkbox, whether it is checked or
-        unchecked. It’s commonly used in forms where a user can select multiple
-        options.
+        The React <Span>checkbox</Span> event handler is used to capture the
+        state of a checkbox, whether it is checked or unchecked. It’s commonly
+        used in forms where a user can select multiple options.
       </p>
       <p className="text-lg font-bold mb-2">Handling Checkbox State:</p>
       <CodeSnippets
@@ -24,9 +22,8 @@ const CheckboxEvent = () => {
       <div className="bg-gray-200 rounded-lg py-4 mb-4">
         <h2 className="text-lg font-bold mb-2">Example:</h2>
         <p className="mb-2 text-lg">
-          Below is an example of using the{" "}
-          <span className="text-red-500">onChange</span> event to update the
-          state based on the checkbox's checked status.
+          Below is an example of using the <Span>onChange</Span> event to update
+          the state based on the checkbox's checked status.
         </p>
         <CodeSnippets
           codeString={`import { useState } from "react";
@@ -66,7 +63,10 @@ export default CheckboxComponent;
               Preview of code
             </button>
           ) : (
-            <div className="relative top-1 min-h-48">
+            <RefreshButton
+              onClick={() => setIsChecked(false)}
+              className="min-h-48"
+            >
               <label className="flex gap-3 ">
                 <input
                   type="radio"
@@ -78,16 +78,7 @@ export default CheckboxComponent;
                   {isChecked ? "Checked" : "Unchecked"}
                 </p>
               </label>
-
-              <div className="absolute top-1 right-2">
-                <button
-                  className="bg-[#282c34] p-2 rounded-md hover:shadow-md text-white"
-                  onClick={() => setIsChecked(false)}
-                >
-                  <IoIosRefresh className="text-white hover:transition-all hover:duration-1000 hover:rotate-180 " />
-                </button>
-              </div>
-            </div>
+            </RefreshButton>
           )}
         </CodePreview>
       </div>
